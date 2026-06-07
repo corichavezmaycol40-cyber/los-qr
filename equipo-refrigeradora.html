@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refrigeradora Indurama | Lab. Análisis Sensorial</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#071227;--navy2:#0d1f3c;--navy3:#162a4a;
+  --accent:#2a7fff;--acl:#5a9fff;
+  --gold:#e8a933;--goldl:#f5c96a;
+  --w:#fff;--off:#f4f6fa;
+  --muted:rgba(255,255,255,.6);--dim:rgba(255,255,255,.35);
+  --bd:rgba(255,255,255,.1);--bd2:rgba(255,255,255,.2);
+  --cbg:rgba(255,255,255,.05);--chov:rgba(255,255,255,.08);
+  --ok:#2ecc71;--warn:#f39c12;--err:#e74c3c
+}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--w);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 20%,rgba(42,127,255,.08) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 20% 80%,rgba(232,169,51,.06) 0%,transparent 60%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding-bottom:80px}
+.hdr{background:rgba(13,31,60,.97);border-bottom:1px solid var(--bd);padding:20px 20px 0}
+.hdr-logos{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.hdr-logos img{height:48px;object-fit:contain;filter:brightness(1.1)}
+.hdr-center{flex:1;text-align:center}
+.uni{font-size:7.5px;font-weight:600;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;line-height:1.5}
+.lbadge{margin-top:5px;display:inline-flex;align-items:center;gap:5px;background:rgba(42,127,255,.15);border:1px solid rgba(42,127,255,.3);border-radius:20px;padding:3px 10px;font-size:8px;font-weight:600;letter-spacing:.1em;color:var(--acl);text-transform:uppercase}
+.lbadge::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.tabs{display:flex;gap:2px;margin-top:14px;border-bottom:1px solid var(--bd)}
+.tab{flex:1;background:none;border:none;padding:10px 4px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer;position:relative;transition:color .2s}
+.tab.on{color:var(--w)}
+.tab.on::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent);border-radius:2px 2px 0 0}
+.panel{display:none;padding:0}.panel.on{display:block}
+.eq-hdr{position:relative;height:200px;background:var(--navy2);overflow:hidden}
+
+.eq-over{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 14px;background:linear-gradient(0deg,rgba(7,18,39,.95) 0%,transparent 100%)}
+.etag{display:inline-block;background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);color:var(--acl);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:6px}
+.ename{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;line-height:1.2}
+.ebrand{font-size:12px;color:var(--goldl);font-weight:500;margin-top:3px}
+.sec{padding:14px 20px;border-bottom:1px solid var(--bd)}
+.sec-t{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--bd)}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.si{background:var(--cbg);border:1px solid var(--bd);border-radius:10px;padding:10px 12px}
+.si.fw{grid-column:1/-1}
+.sk{font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.sv{font-size:13px;font-weight:500;color:var(--w);line-height:1.3}
+.sv.ac{color:var(--acl)}.sv.go{color:var(--goldl)}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pb{background:rgba(46,204,113,.06);border:1px solid rgba(46,204,113,.2);border-radius:10px;padding:12px}
+.cb{background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.2);border-radius:10px;padding:12px}
+.pct{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+.pb .pct{color:var(--ok)}.cb .pct{color:var(--err)}
+.pci{font-size:11px;line-height:1.4;color:rgba(255,255,255,.75);margin-bottom:3px;padding-left:10px;position:relative}
+.pci::before{content:'•';position:absolute;left:0}
+.pb .pci::before{color:var(--ok)}.cb .pci::before{color:var(--err)}
+.fl{list-style:none}
+.fi{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:12px;color:rgba(255,255,255,.8);line-height:1.4}
+.fi:last-child{border-bottom:none}
+.fd{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.rcard{margin:14px 20px;background:var(--cbg);border:1px solid var(--bd);border-radius:14px;padding:14px;display:flex;align-items:center;gap:14px}
+.rav{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,rgba(42,127,255,.3),rgba(232,169,51,.3));border:2px solid rgba(42,127,255,.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--acl);flex-shrink:0}
+.rrole{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.rname{font-size:15px;font-weight:600;color:var(--w);margin-bottom:2px}
+.rarea{font-size:11px;color:var(--muted)}
+.sitem{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:var(--cbg);border:1px solid var(--bd);border-radius:10px;margin-bottom:7px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.4}
+.sico{font-size:15px;flex-shrink:0}
+.nfoot{margin:10px 20px;padding:10px 14px;background:rgba(255,255,255,.04);border-left:2px solid var(--accent);border-radius:0 8px 8px 0;font-size:11px;color:var(--muted);line-height:1.5}
+.obs{background:rgba(232,169,51,.08);border:1px solid rgba(232,169,51,.25);border-radius:10px;padding:11px 13px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:7px}
+.obsl{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--goldl);margin-bottom:4px}
+/* EDITOR */
+.stbar{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-top:1px solid var(--bd);background:rgba(7,18,39,.9)}
+.stinfo{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted)}
+.stdot{width:7px;height:7px;border-radius:50%;background:var(--ok);animation:blink 2s infinite}
+.edit-btn{display:flex;align-items:center;gap:6px;background:rgba(232,169,51,.12);border:1px solid rgba(232,169,51,.3);border-radius:20px;padding:5px 13px;font-size:10px;font-weight:600;color:var(--goldl);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.edit-btn:hover{background:rgba(232,169,51,.22)}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center;padding:16px}
+.modal-bg.open{display:flex}
+.modal{background:var(--navy2);border:1px solid var(--bd2);border-radius:16px;width:100%;max-width:460px;max-height:90vh;overflow-y:auto;padding:20px}
+.modal-t{font-size:15px;font-weight:600;color:var(--w);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
+.close-btn{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.field input,.field textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:8px;padding:8px 12px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:border .2s}
+.field input:focus,.field textarea:focus{border-color:rgba(42,127,255,.6)}
+.field textarea{resize:vertical;min-height:60px}
+.save-btn{width:100%;background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);border-radius:10px;padding:10px;color:var(--acl);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:4px}
+.save-btn:hover{background:rgba(42,127,255,.35)}
+.dl-btn{width:100%;background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.3);border-radius:10px;padding:10px;color:#7be3a8;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:8px}
+.dl-btn:hover{background:rgba(46,204,113,.25)}
+
+.eq-hdr{cursor:pointer;position:relative}
+.eq-hdr:hover .img-hint{opacity:1}
+.img-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:8px 14px;font-size:11px;color:#fff;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;z-index:5}
+.eq-hdr-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:80px}
+.eq-hdr-inner img.eq-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.88}
+#imgInput{display:none}
+.img-field{margin-bottom:14px}
+.img-field label{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.img-upload-btn{width:100%;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.3);border-radius:8px;padding:10px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.img-upload-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5)}
+.img-preview{width:100%;height:100px;object-fit:cover;border-radius:8px;margin-top:6px;display:none;border:1px solid var(--bd2)}
+.img-remove-btn{width:100%;background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.25);border-radius:8px;padding:6px;color:#f5a5a5;font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;margin-top:5px;display:none;transition:all .2s}
+.img-remove-btn:hover{background:rgba(231,76,60,.2)}
+
+/* QR panel */
+.qr-panel-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;padding:16px}
+.qr-panel-bg.open{display:flex}
+.qr-panel{background:var(--navy2);border:1px solid var(--bd2);border-radius:18px;width:100%;max-width:360px;padding:22px;text-align:center}
+.qr-panel-t{font-size:15px;font-weight:700;color:var(--w);margin-bottom:4px}
+.qr-panel-sub{font-size:11px;color:var(--muted);margin-bottom:18px}
+.qr-box{background:#fff;border-radius:12px;padding:14px;display:inline-block;margin-bottom:14px}
+.qr-box canvas,.qr-box img{display:block}
+.url-row{display:flex;gap:6px;margin-bottom:12px;align-items:center}
+.url-input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:8px;padding:7px 10px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;outline:none}
+.url-input:focus{border-color:rgba(42,127,255,.6)}
+.url-copy-btn{background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);border-radius:8px;padding:7px 10px;color:var(--acl);font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:all .2s}
+.url-copy-btn:hover{background:rgba(42,127,255,.35)}
+.url-copy-btn.copied{background:rgba(46,204,113,.2);border-color:rgba(46,204,113,.4);color:#7be3a8}
+.qr-action-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.qr-dl-btn{background:rgba(46,204,113,.15);border:1px solid rgba(46,204,113,.3);border-radius:10px;padding:9px;color:#7be3a8;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.qr-dl-btn:hover{background:rgba(46,204,113,.25)}
+.netlify-btn{background:rgba(0,175,240,.15);border:1px solid rgba(0,175,240,.3);border-radius:10px;padding:9px;color:#7dd4f0;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none;display:block}
+.netlify-btn:hover{background:rgba(0,175,240,.25)}
+.qr-close-btn{width:100%;background:none;border:1px solid var(--bd);border-radius:10px;padding:8px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;margin-top:4px;transition:all .2s}
+.qr-close-btn:hover{background:rgba(255,255,255,.05)}
+.qr-hint{font-size:10px;color:var(--dim);line-height:1.5;margin-bottom:10px}
+.qr-hint a{color:var(--acl);text-decoration:none}
+.qr-hint a:hover{text-decoration:underline}
+.qr-sep{border:none;border-top:1px solid var(--bd);margin:10px 0}
+/* stbar qr button */
+.qr-btn{display:flex;align-items:center;gap:6px;background:rgba(42,127,255,.15);border:1px solid rgba(42,127,255,.3);border-radius:20px;padding:5px 13px;font-size:10px;font-weight:600;color:var(--acl);cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}
+.qr-btn:hover{background:rgba(42,127,255,.25)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hdr">
+  <div class="hdr-logos">
+    <img src="https://orange-hornet-425452.hostingersite.com/public/branding/logo-agroindustrial-left.png" alt="Logo Agroindustrial" onerror="this.style.display='none'">
+    <div class="hdr-center">
+      <div class="uni">UNIVERSIDAD NACIONAL<br>HERMILIO VALDIZÁN<br>FAC. CIENCIAS AGRARIAS<br>E.P. INGENIERÍA AGROINDUSTRIAL</div>
+      <div class="lbadge">Lab. Análisis Sensorial</div>
+    </div>
+    <img src="https://orange-hornet-425452.hostingersite.com/public/branding/logo-unheval-right.png" alt="Logo UNHEVAL" onerror="this.style.display='none'">
+  </div>
+  <div class="tabs">
+    <button class="tab on" onclick="sw('ficha',this)">Ficha</button>
+    <button class="tab" onclick="sw('func',this)">Funciones</button>
+    <button class="tab" onclick="sw('resp',this)">Responsable</button>
+    <button class="tab" onclick="sw('seg',this)">Seguridad</button>
+  </div>
+</div>
+
+<div class="panel on" id="p-ficha">
+  <div class="eq-hdr" onclick="document.getElementById('imgInput').click()">
+    <span class="img-hint">📷 Toca para cambiar imagen</span>
+    <input type="file" id="imgInput" accept="image/*" onchange="handleImgUpload(event)">
+    <div class="eq-hdr-inner">🧊<img class="eq-img" id="eq-img-main" src="" style="display:none"></div>
+    <div class="eq-over">
+      <div class="etag" id="eq-tag-d">Conservación</div>
+      <div class="ename" id="eq-name-d">Refrigeradora Side by Side</div>
+      <div class="ebrand" id="eq-brand-d">Indurama · Serie Inverter Croma</div>
+    </div>
+  </div>
+  <div class="sec"><div class="sec-t">Datos técnicos</div><div class="sgrid"><div class="si"><div class="sk">Marca</div><div class="sv go" id="sv-marca">Indurama</div></div><div class="si"><div class="sk">Modelo ref.</div><div class="sv" id="sv-modelo_ref">RI-795DI o similar</div></div><div class="si"><div class="sk">Serie</div><div class="sv" id="sv-serie">Inverter Croma</div></div><div class="si"><div class="sk">Puertas</div><div class="sv ac" id="sv-puertas">Side by Side (2)</div></div><div class="si fw"><div class="sk">Tecnología</div><div class="sv ac" id="sv-tecnología">Compresor Inverter de alta eficiencia energética</div></div></div></div>
+  <div class="sec"><div class="sec-t">Ventajas y limitaciones</div><div class="pc"><div class="pb"><div class="pct">✓ Ventajas</div><div class="pci" id="pro-0">Gran capacidad de almacenamiento</div><div class="pci" id="pro-1">Temperatura estable con inverter</div><div class="pci" id="pro-2">Doble zona frío/congelado</div></div><div class="cb"><div class="pct">✕ Limitaciones</div><div class="pci" id="con-0">Alto consumo eléctrico relativo</div><div class="pci" id="con-1">Ocupa mayor espacio físico</div><div class="pci" id="con-2">No para almacenamiento de reactivos</div></div></div></div>
+  <div class="nfoot" id="eq-note">Mantener temperatura calibrada y verificar que la puerta cierre herméticamente para garantizar la cadena de frío.</div>
+</div>
+<div class="panel" id="p-func">
+  <div class="sec"><div class="sec-t">Lista de funciones</div><ul class="fl"><li class="fi"><div class="fd"></div><span id="fn-0">Conservación de muestras alimentarias para análisis sensorial diferido</span></li><li class="fi"><div class="fd"></div><span id="fn-1">Almacenamiento de estándares de referencia y patrones de comparación</span></li><li class="fi"><div class="fd"></div><span id="fn-2">Zona de congelado para muestras de larga conservación</span></li><li class="fi"><div class="fd"></div><span id="fn-3">Temperatura regulada para mantener propiedades organolépticas</span></li></ul></div>
+  <div class="sec"><div class="sec-t">Observaciones al culminar</div><div class="obs"><div class="obsl" id="obl-0">Temperatura</div><span id="obt-0">Mantener temperatura calibrada y verificar que la puerta cierre herméticamente.</span></div><div class="obs"><div class="obsl" id="obl-1">Organización</div><span id="obt-1">Etiquetar todas las muestras con fecha, tipo y responsable antes de almacenar.</span></div></div>
+</div>
+<div class="panel" id="p-resp">
+  <div class="rcard">
+    <div class="rav" id="eq-enc-av">MA</div>
+    <div>
+      <div class="rrole">Encargada del equipo</div>
+      <div class="rname" id="eq-enc">Maryorrit</div>
+      <div class="rarea" id="eq-area">Lab. de Análisis Sensorial · UNHEVAL</div>
+    </div>
+  </div>
+  <div class="sec"><div class="sec-t">Datos relevantes</div>
+    <div class="sgrid">
+      <div class="si fw"><div class="sk">Área</div><div class="sv ac">Lab. de Análisis Sensorial</div></div>
+      <div class="si fw"><div class="sk">Institución</div><div class="sv">E.P. Ingeniería Agroindustrial — UNHEVAL</div></div>
+    </div>
+  </div>
+</div>
+<div class="panel" id="p-seg">
+  <div class="sec"><div class="sec-t">Advertencias de seguridad</div><div class="sitem"><div class="sico">🌡️</div><span id="sft-0">No almacenar productos químicos o reactivos junto a muestras alimentarias.</span></div><div class="sitem"><div class="sico">🚫</div><span id="sft-1">No sobrecargar los estantes; puede comprometer la circulación de aire frío.</span></div><div class="sitem"><div class="sico">🧹</div><span id="sft-2">Limpiar el interior mensualmente con solución desinfectante no abrasiva.</span></div><div class="sitem"><div class="sico">🔌</div><span id="sft-3">No desconectar bruscamente; esperar 5 min antes de reconectar.</span></div></div>
+</div>
+<div class="stbar">
+  <div class="stinfo"><div class="stdot"></div><span id="eq-name-st">Refrigeradora</span> · Lab. Sensorial</div>
+  <button class="qr-btn" onclick="openQR()">⬛ QR</button><button class="edit-btn" onclick="openEditor()">✏ Editar</button>
+</div>
+</div>
+
+<!-- MODAL EDITOR -->
+<div class="modal-bg" id="modalBg">
+<div class="modal">
+  <div class="modal-t">Editar información del equipo <button class="close-btn" onclick="closeEditor()">×</button></div>
+  
+  <div class="field"><label>Nombre del equipo</label><input id="ef-name" value="Refrigeradora Side by Side"></div>
+  <div class="field"><label>Marca / Modelo</label><input id="ef-brand" value="Indurama · Serie Inverter Croma"></div>
+  <div class="field"><label>Categoría / Tag</label><input id="ef-tag" value="Conservación"></div>
+  <div class="field"><label>Encargada</label><input id="ef-enc" value="Maryorrit"></div>
+  <div class="field"><label>Área responsable</label><input id="ef-area" value="Lab. de Análisis Sensorial · UNHEVAL"></div>
+  <div class="field"><label>Nota al pie</label><textarea id="ef-note">Mantener temperatura calibrada y verificar que la puerta cierre herméticamente para garantizar la cadena de frío.</textarea></div>
+<div class="field"><label>Ventaja 1</label><input id="ef-pro0" value="Gran capacidad de almacenamiento"></div><div class="field"><label>Ventaja 2</label><input id="ef-pro1" value="Temperatura estable con inverter"></div><div class="field"><label>Ventaja 3</label><input id="ef-pro2" value="Doble zona frío/congelado"></div><div class="field"><label>Limitación 1</label><input id="ef-con0" value="Alto consumo eléctrico relativo"></div><div class="field"><label>Limitación 2</label><input id="ef-con1" value="Ocupa mayor espacio físico"></div><div class="field"><label>Limitación 3</label><input id="ef-con2" value="No para almacenamiento de reactivos"></div><div class="field"><label>Función 1</label><textarea id="ef-fn0">Conservación de muestras alimentarias para análisis sensorial diferido</textarea></div><div class="field"><label>Función 2</label><textarea id="ef-fn1">Almacenamiento de estándares de referencia y patrones de comparación</textarea></div><div class="field"><label>Función 3</label><textarea id="ef-fn2">Zona de congelado para muestras de larga conservación</textarea></div><div class="field"><label>Función 4</label><textarea id="ef-fn3">Temperatura regulada para mantener propiedades organolépticas</textarea></div><div class="field"><label>Obs. etiqueta 1</label><input id="ef-obl0" value="Temperatura"></div><div class="field"><label>Obs. texto 1</label><textarea id="ef-obt0">Mantener temperatura calibrada y verificar que la puerta cierre herméticamente.</textarea></div><div class="field"><label>Obs. etiqueta 2</label><input id="ef-obl1" value="Organización"></div><div class="field"><label>Obs. texto 2</label><textarea id="ef-obt1">Etiquetar todas las muestras con fecha, tipo y responsable antes de almacenar.</textarea></div><div class="field"><label>Seguridad 1</label><textarea id="ef-sft0">No almacenar productos químicos o reactivos junto a muestras alimentarias.</textarea></div><div class="field"><label>Seguridad 2</label><textarea id="ef-sft1">No sobrecargar los estantes; puede comprometer la circulación de aire frío.</textarea></div><div class="field"><label>Seguridad 3</label><textarea id="ef-sft2">Limpiar el interior mensualmente con solución desinfectante no abrasiva.</textarea></div><div class="field"><label>Seguridad 4</label><textarea id="ef-sft3">No desconectar bruscamente; esperar 5 min antes de reconectar.</textarea></div>
+  <div class="img-field"><label>Imagen del equipo</label>
+    <div class="img-upload-btn" onclick="document.getElementById('imgInput2').click()">📷 Seleccionar imagen</div>
+    <input type="file" id="imgInput2" style="display:none" accept="image/*" onchange="handleImgUpload(event)">
+    <img id="img-preview-modal" class="img-preview">
+    <button class="img-remove-btn" id="img-remove-btn" onclick="removeImg()">✕ Quitar imagen</button>
+  </div>
+  <button class="save-btn" onclick="saveData()">Guardar cambios</button>
+  <button class="dl-btn" onclick="downloadHTML()">Descargar HTML actualizado</button>
+</div>
+</div>
+
+<script>
+function sw(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('p-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+function openEditor(){document.getElementById('modalBg').classList.add('open')}
+function closeEditor(){document.getElementById('modalBg').classList.remove('open')}
+function getData(){return {name:document.getElementById('ef-name').value,brand:document.getElementById('ef-brand').value,tag:document.getElementById('ef-tag').value,enc:document.getElementById('ef-enc').value,area:document.getElementById('ef-area').value,note:document.getElementById('ef-note').value,pro0:document.getElementById('ef-pro0').value,pro1:document.getElementById('ef-pro1').value,pro2:document.getElementById('ef-pro2').value,con0:document.getElementById('ef-con0').value,con1:document.getElementById('ef-con1').value,con2:document.getElementById('ef-con2').value,fn0:document.getElementById('ef-fn0').value,fn1:document.getElementById('ef-fn1').value,fn2:document.getElementById('ef-fn2').value,fn3:document.getElementById('ef-fn3').value,obl0:document.getElementById('ef-obl0').value,obl1:document.getElementById('ef-obl1').value,obt0:document.getElementById('ef-obt0').value,obt1:document.getElementById('ef-obt1').value,sft0:document.getElementById('ef-sft0').value,sft1:document.getElementById('ef-sft1').value,sft2:document.getElementById('ef-sft2').value,sft3:document.getElementById('ef-sft3').value}}
+function applyData(d){document.getElementById('eq-name-d').textContent=d.name;document.getElementById('eq-brand-d').textContent=d.brand;document.getElementById('eq-tag-d').textContent=d.tag;document.getElementById('eq-name-st').textContent=d.name;document.getElementById('eq-enc').textContent=d.enc;document.getElementById('eq-enc-av').textContent=d.enc.slice(0,2).toUpperCase();document.getElementById('eq-area').textContent=d.area;document.getElementById('eq-note').textContent=d.note;if(document.getElementById('pro-0'))document.getElementById('pro-0').textContent=d.pro0;if(document.getElementById('pro-1'))document.getElementById('pro-1').textContent=d.pro1;if(document.getElementById('pro-2'))document.getElementById('pro-2').textContent=d.pro2;if(document.getElementById('con-0'))document.getElementById('con-0').textContent=d.con0;if(document.getElementById('con-1'))document.getElementById('con-1').textContent=d.con1;if(document.getElementById('con-2'))document.getElementById('con-2').textContent=d.con2;if(document.getElementById('fn-0'))document.getElementById('fn-0').textContent=d.fn0;if(document.getElementById('fn-1'))document.getElementById('fn-1').textContent=d.fn1;if(document.getElementById('fn-2'))document.getElementById('fn-2').textContent=d.fn2;if(document.getElementById('fn-3'))document.getElementById('fn-3').textContent=d.fn3;if(document.getElementById('obl-0'))document.getElementById('obl-0').textContent=d.obl0;if(document.getElementById('obl-1'))document.getElementById('obl-1').textContent=d.obl1;if(document.getElementById('obt-0'))document.getElementById('obt-0').textContent=d.obt0;if(document.getElementById('obt-1'))document.getElementById('obt-1').textContent=d.obt1;if(document.getElementById('sft-0'))document.getElementById('sft-0').textContent=d.sft0;if(document.getElementById('sft-1'))document.getElementById('sft-1').textContent=d.sft1;if(document.getElementById('sft-2'))document.getElementById('sft-2').textContent=d.sft2;if(document.getElementById('sft-3'))document.getElementById('sft-3').textContent=d.sft3;document.getElementById('ef-name').value=d.name;document.getElementById('ef-brand').value=d.brand;document.getElementById('ef-tag').value=d.tag;document.getElementById('ef-enc').value=d.enc;document.getElementById('ef-area').value=d.area;document.getElementById('ef-note').value=d.note;if(document.getElementById('ef-pro0'))document.getElementById('ef-pro0').value=d.pro0;if(document.getElementById('ef-pro1'))document.getElementById('ef-pro1').value=d.pro1;if(document.getElementById('ef-pro2'))document.getElementById('ef-pro2').value=d.pro2;if(document.getElementById('ef-con0'))document.getElementById('ef-con0').value=d.con0;if(document.getElementById('ef-con1'))document.getElementById('ef-con1').value=d.con1;if(document.getElementById('ef-con2'))document.getElementById('ef-con2').value=d.con2;if(document.getElementById('ef-fn0'))document.getElementById('ef-fn0').value=d.fn0;if(document.getElementById('ef-fn1'))document.getElementById('ef-fn1').value=d.fn1;if(document.getElementById('ef-fn2'))document.getElementById('ef-fn2').value=d.fn2;if(document.getElementById('ef-fn3'))document.getElementById('ef-fn3').value=d.fn3;if(document.getElementById('ef-obl0'))document.getElementById('ef-obl0').value=d.obl0;if(document.getElementById('ef-obl1'))document.getElementById('ef-obl1').value=d.obl1;if(document.getElementById('ef-obt0'))document.getElementById('ef-obt0').value=d.obt0;if(document.getElementById('ef-obt1'))document.getElementById('ef-obt1').value=d.obt1;if(document.getElementById('ef-sft0'))document.getElementById('ef-sft0').value=d.sft0;if(document.getElementById('ef-sft1'))document.getElementById('ef-sft1').value=d.sft1;if(document.getElementById('ef-sft2'))document.getElementById('ef-sft2').value=d.sft2;if(document.getElementById('ef-sft3'))document.getElementById('ef-sft3').value=d.sft3}
+function saveData(){
+  const d=getData();
+  applyData(d);
+  localStorage.setItem('lab_sensorial_refrigeradora',JSON.stringify(d));
+  closeEditor();
+}
+function downloadHTML(){
+  const d=getData();
+  applyData(d);
+  const blob=new Blob([document.documentElement.outerHTML],{type:'text/html'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='equipo-refrigeradora.html';
+  a.click();
+}
+window.addEventListener('load',()=>{
+  const savedImg=localStorage.getItem('lab_sensorial_refrigeradora_img');
+  if(savedImg)setImg(savedImg);
+  const saved=localStorage.getItem('lab_sensorial_refrigeradora');
+  if(saved)applyData(JSON.parse(saved));
+});
+
+function handleImgUpload(e){
+  const file=e.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    const b64=ev.target.result;
+    setImg(b64);
+    localStorage.setItem('lab_sensorial_refrigeradora_img',b64);
+  };
+  reader.readAsDataURL(file);
+}
+function setImg(src){
+  const main=document.getElementById('eq-img-main');
+  const prev=document.getElementById('img-preview-modal');
+  const rmBtn=document.getElementById('img-remove-btn');
+  if(src){
+    main.src=src;main.style.display='block';
+    if(prev){prev.src=src;prev.style.display='block';}
+    if(rmBtn)rmBtn.style.display='block';
+  } else {
+    main.src='';main.style.display='none';
+    if(prev){prev.src='';prev.style.display='none';}
+    if(rmBtn)rmBtn.style.display='none';
+  }
+}
+function removeImg(){
+  setImg(null);
+  localStorage.removeItem('lab_sensorial_refrigeradora_img');
+}
+
+
+// ── QR CODE (sin librería externa, usando API de Google Charts) ──
+function openQR(){document.getElementById('qrBg').classList.add('open');renderQR()}
+function closeQR(){document.getElementById('qrBg').classList.remove('open')}
+function getQRUrl(){return document.getElementById('qrUrlInput').value.trim()||window.location.href}
+function renderQR(){
+  const url=getQRUrl();
+  const canvas=document.getElementById('qrCanvas');
+  const ctx=canvas.getContext('2d');
+  const size=180;
+  canvas.width=size;canvas.height=size;
+  // Use QR Server API (free, no key needed)
+  const img=new Image();
+  img.crossOrigin='anonymous';
+  img.onload=function(){ctx.clearRect(0,0,size,size);ctx.drawImage(img,0,0,size,size)};
+  img.onerror=function(){
+    ctx.fillStyle='#fff';ctx.fillRect(0,0,size,size);
+    ctx.fillStyle='#333';ctx.font='11px sans-serif';ctx.textAlign='center';
+    ctx.fillText('Pega la URL arriba',size/2,size/2-6);
+    ctx.fillText('y presiona Generar',size/2,size/2+10);
+  };
+  img.src='https://api.qrserver.com/v1/create-qr-code/?size='+size+'x'+size+'&data='+encodeURIComponent(url)+'&bgcolor=ffffff&color=071227&qzone=1&format=png';
+}
+document.addEventListener('DOMContentLoaded',function(){
+  const inp=document.getElementById('qrUrlInput');
+  if(inp){inp.addEventListener('input',function(){renderQR();document.getElementById('urlCopyBtn').classList.remove('copied');document.getElementById('urlCopyBtn').textContent='Copiar';})}
+  const saved=localStorage.getItem('lab_sensorial_refrigeradora_url');
+  if(saved&&inp)inp.value=saved;
+});
+function copyURL(){
+  const val=document.getElementById('qrUrlInput').value.trim();
+  if(!val)return;
+  navigator.clipboard.writeText(val).then(()=>{
+    const btn=document.getElementById('urlCopyBtn');
+    btn.textContent='✓ Copiado';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copiar';btn.classList.remove('copied')},2000);
+  });
+  localStorage.setItem('lab_sensorial_refrigeradora_url',val);
+}
+function downloadQR(){
+  const canvas=document.getElementById('qrCanvas');
+  const url=getQRUrl();
+  const img=new Image();
+  img.crossOrigin='anonymous';
+  img.onload=function(){
+    const c=document.createElement('canvas');c.width=220;c.height=220;
+    const cx=c.getContext('2d');
+    cx.fillStyle='#ffffff';cx.fillRect(0,0,220,220);
+    cx.drawImage(img,20,20,180,180);
+    const a=document.createElement('a');
+    a.download='qr-equipo-refrigeradora.png';
+    a.href=c.toDataURL('image/png');
+    a.click();
+  };
+  img.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(url)+'&bgcolor=ffffff&color=071227&qzone=1&format=png';
+}
+
+</script>
+
+<!-- QR Modal -->
+<div class="qr-panel-bg" id="qrBg">
+<div class="qr-panel">
+  <div class="qr-panel-t">Código QR del equipo</div>
+  <div class="qr-panel-sub">Escanea para abrir en cualquier celular</div>
+  <div class="qr-box"><canvas id="qrCanvas" width="180" height="180"></canvas></div>
+  <div class="url-row">
+    <input class="url-input" id="qrUrlInput" placeholder="Pega aquí la URL pública del archivo...">
+    <button class="url-copy-btn" id="urlCopyBtn" onclick="copyURL()">Copiar</button>
+  </div>
+  <div class="qr-hint">
+    ⚠️ Para que el QR funcione con el celular, el archivo debe estar en línea.<br>
+    Sube el HTML a tu Hostinger y pega la URL arriba.<br>
+    O usa <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a> (gratis, arrastra el archivo).
+  </div>
+  <hr class="qr-sep">
+  <div class="qr-action-row">
+    <button class="qr-dl-btn" onclick="downloadQR()">⬇ Descargar QR</button>
+    <a class="netlify-btn" href="https://app.netlify.com/drop" target="_blank">☁ Netlify Drop</a>
+  </div>
+  <button class="qr-close-btn" onclick="closeQR()">Cerrar</button>
+</div>
+</div>
+
+</body></html>
