@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0063)file:///C:/Users/LENOVO/Downloads/equipo-purificador%20(8).html -->
-<html lang="es" style="--c1: #2980b9; --c2: #5dade2; --c3: #1a5276;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0064)file:///C:/Users/LENOVO/Downloads/equipo-purificador%20(14).html -->
+<html lang="es" style="--c1: #2873b8; --c2: #5fe3da; --c3: #1a7475;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title id="page-title">Agitador de Tubos  | UNIVERSIDAD NACIONAL</title>
-<link href="./Agitador de Tubos _ UNIVERSIDAD NACIONAL_files/css2" rel="stylesheet">
+<link href="./Agitador de Tubos_UNIVERSIDAD NACIONAL_files/css2" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -149,6 +149,60 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .netlify-btn{background:rgba(0,175,240,.12);border:1px solid rgba(0,175,240,.25);border-radius:10px;padding:9px;color:#7dd4f0;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;display:block}
 .qr-close-btn{width:100%;background:none;border:1px solid var(--bd);border-radius:10px;padding:8px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer}
 hr.sep{border:none;border-top:1px solid var(--bd);margin:10px 0}
+/* PASSWORD MODAL */
+.pwd-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:300;align-items:center;justify-content:center;padding:20px}
+.pwd-bg.open{display:flex}
+.pwd-box{background:var(--navy2);border:1px solid var(--bd2);border-radius:18px;width:100%;max-width:320px;padding:24px;text-align:center}
+.pwd-icon{font-size:36px;margin-bottom:10px}
+.pwd-title{font-size:16px;font-weight:700;color:var(--w);margin-bottom:4px}
+.pwd-sub{font-size:11px;color:var(--muted);margin-bottom:18px}
+.pwd-input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:10px;padding:10px 14px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;text-align:center;letter-spacing:.2em;margin-bottom:10px;transition:border .2s}
+.pwd-input:focus{border-color:rgba(42,127,255,.6)}
+.pwd-input.error{border-color:rgba(231,76,60,.7);animation:shake .3s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pwd-btn{width:100%;background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);border-radius:10px;padding:10px;color:var(--acl);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:8px}
+.pwd-btn:hover{background:rgba(42,127,255,.35)}
+.pwd-cancel{width:100%;background:none;border:1px solid var(--bd);border-radius:10px;padding:8px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
+.pwd-cancel:hover{background:rgba(255,255,255,.05)}
+.pwd-error{font-size:11px;color:#e74c3c;margin-bottom:8px;min-height:16px}
+.pwd-attempts{font-size:10px;color:var(--dim);margin-top:4px}
+
+/* Dynamic bullet lists */
+.bullet-list{list-style:none;margin:0;padding:0}
+.bullet-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:12px;color:rgba(255,255,255,.8);line-height:1.4}
+.bullet-item:last-child{border-bottom:none}
+.bullet-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.pros-list .bullet-dot{background:var(--ok)}
+.cons-list .bullet-dot{background:var(--err)}
+/* Editor bullet manager */
+.bullet-manager{border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.bullet-manager-hdr{padding:8px 12px;background:rgba(255,255,255,.05);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.bullet-rows{padding:6px 8px}
+.bullet-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.bullet-row input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:7px;padding:6px 9px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;transition:border .2s}
+.bullet-row input:focus{border-color:rgba(42,127,255,.5)}
+.del-row-btn{background:rgba(231,76,60,.15);border:1px solid rgba(231,76,60,.25);border-radius:7px;padding:5px 8px;color:#f5a5a5;font-size:12px;cursor:pointer;flex-shrink:0;transition:all .2s;line-height:1}
+.del-row-btn:hover{background:rgba(231,76,60,.3)}
+.add-row-btn{width:100%;background:rgba(42,127,255,.1);border:1px dashed rgba(42,127,255,.3);border-radius:7px;padding:6px;color:var(--acl);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;transition:all .2s;margin:4px 0 6px}
+.add-row-btn:hover{background:rgba(42,127,255,.2)}
+
+/* Obs sections with bullet lists */
+.obs-card{background:rgba(232,169,51,.06);border:1px solid rgba(232,169,51,.2);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.obs-card-hdr{padding:10px 14px 8px;border-bottom:1px solid rgba(232,169,51,.15)}
+.obs-card-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--goldl)}
+.obs-bullet-list{list-style:none;padding:8px 14px 10px;margin:0}
+.obs-bullet-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:12px;color:rgba(255,255,255,.82);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05)}
+.obs-bullet-item:last-child{border-bottom:none}
+.obs-bullet-dot{width:5px;height:5px;border-radius:50%;background:var(--goldl);flex-shrink:0;margin-top:6px}
+/* Obs manager in editor */
+.obs-manager{border:1px solid rgba(232,169,51,.25);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.obs-manager-hdr{padding:8px 12px;background:rgba(232,169,51,.08);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--goldl)}
+.obs-label-field{padding:6px 8px 2px}
+.obs-label-field input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:7px;padding:6px 9px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;outline:none}
+.obs-label-field input:focus{border-color:rgba(232,169,51,.5)}
+.obs-rows{padding:4px 8px}
+.obs-add-btn{width:calc(100% - 16px);margin:0 8px 8px;background:rgba(232,169,51,.08);border:1px dashed rgba(232,169,51,.3);border-radius:7px;padding:6px;color:var(--goldl);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;transition:all .2s}
+.obs-add-btn:hover{background:rgba(232,169,51,.18)}
 </style>
 </head>
 <body>
@@ -157,7 +211,7 @@ hr.sep{border:none;border-top:1px solid var(--bd);margin:10px 0}
 <!-- HEADER -->
 <div class="hdr">
   <div class="hdr-logos">
-    <img id="logo-left" src="./Agitador de Tubos _ UNIVERSIDAD NACIONAL_files/logo-agroindustrial-left.png" alt="Logo izquierda" onerror="this.style.display=&#39;none&#39;">
+    <img id="logo-left" src="./Agitador de Tubos_UNIVERSIDAD NACIONAL_files/logo-agroindustrial-left.png" alt="Logo izquierda" onerror="this.style.display=&#39;none&#39;">
     <div class="hdr-center">
       <div class="uni" id="hdr-uni">UNIVERSIDAD NACIONAL
 HERMILIO VALDIZÁN
@@ -165,7 +219,7 @@ FAC. CIENCIAS AGRARIAS
 E.P. INGENIERÍA AGROINDUSTRIAL</div>
       <div class="lbadge" id="hdr-badge"></div>
     </div>
-    <img id="logo-right" src="./Agitador de Tubos _ UNIVERSIDAD NACIONAL_files/logo-unheval-right.png" alt="Logo derecha" onerror="this.style.display=&#39;none&#39;">
+    <img id="logo-right" src="./Agitador de Tubos_UNIVERSIDAD NACIONAL_files/logo-unheval-right.png" alt="Logo derecha" onerror="this.style.display=&#39;none&#39;">
   </div>
   <div class="tabs">
     <button class="tab on" onclick="sw(&#39;ficha&#39;,this)">Ficha</button>
@@ -202,15 +256,11 @@ E.P. INGENIERÍA AGROINDUSTRIAL</div>
     <div class="pc">
       <div class="pb">
         <div class="pct" id="pros-title">✓ Ventajas</div>
-        <div class="pci" id="pro-0">Agitación uniforme de tubos y muestras</div>
-        <div class="pci" id="pro-1">Velocidad regulable para diferentes tipos de análisis</div>
-        <div class="pci" id="pro-2">Compatibilidad con tubos de ensayo estándar</div>
+        <ul class="bullet-list pros-list" id="pros-list-display"><li class="bullet-item"><div class="bullet-dot"></div><span>Agua sin impurezas para análisis precisos</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Doble purificación RO + DI</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Calidad reproducible en cada sesión</span></li></ul>
       </div>
       <div class="cb">
         <div class="pct" id="cons-title">✕ Limitaciones</div>
-        <div class="pci" id="con-0">Capacidad limitada al número de tubos</div>
-        <div class="pci" id="con-1">No apto para muestras de gran volumen</div>
-        <div class="pci" id="con-2">Requiere superficie estable para evitar vibraciones excesivas</div>
+        <ul class="bullet-list cons-list" id="cons-list-display"><li class="bullet-item"><div class="bullet-dot"></div><span>Reemplazo periódico de filtros requerido</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Flujo de producción limitado por caudal</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>No apto para consumo directo sin validar</span></li></ul>
       </div>
     </div>
   </div>
@@ -222,77 +272,19 @@ E.P. INGENIERÍA AGROINDUSTRIAL</div>
   <div class="sec">
     <div class="sec-t" id="sec-t-func">Lista de funciones</div>
     <ul class="fl">
-      <li class="fi"><div class="fd"></div><span id="fn-0">Mezcla homogénea de reactivos líquidos en tubos de ensayo</span></li>
-      <li class="fi"><div class="fd"></div><span id="fn-1">Resuspensión de células o partículas en suspensión</span></li>
-      <li class="fi"><div class="fd"></div><span id="fn-2">Preparación rápida de muestras para análisis químicos o biológicos</span></li>
-      <li class="fi"><div class="fd"></div><span id="fn-3">Agitación controlada para pruebas sensoriales o microbiológicas</span></li>
+      <ul class="bullet-list" id="func-list-display"><li class="bullet-item"><div class="bullet-dot"></div><span>Producción de agua de alta pureza (tipo I y tipo II) para preparación de muestras</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Eliminación de cloruros, metales pesados y microorganismos mediante membrana RO</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Desionización final (DI) para análisis que requieren conductividad ultrabaja</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Suministro de agua neutra para evitar interferencias en pruebas de sabor y aroma</span></li></ul>
     </ul>
   </div>
   <div class="sec">
     <div class="sec-t" id="sec-t-obs">PROCEDIMIENTO DE OPERACIÓN</div>
-    <div class="obs"><div class="obsl" id="obl-0">PASOS</div><span id="obt-0">B.1 Verificación previa
-1.	Verificar que el equipo se encuentre limpio, seco y libre de residuos.
-2.	Confirmar que el cabezal de goma se encuentre correctamente instalado y en buen estado.
-3.	Inspeccionar el estado del cable de alimentación y enchufe.
-4.	Verificar la limpieza y correcto funcionamiento del panel digital y pantalla LED.
-5.	Confirmar que los recipientes a utilizar se encuentren íntegros y adecuadamente cerrados.
-B.2 Puesta en marcha
-1.	Conectar el equipo a una fuente de alimentación con puesta a tierra.
-2.	Encender el interruptor principal.
-3.	Verificar que el sistema complete correctamente la secuencia de inicio y que la pantalla digital muestre los parámetros operativos.
-B.3 Selección del modo de funcionamiento
-Modo táctil (Touch)
-1.	Seleccionar el modo táctil mediante el control correspondiente.
-2.	Colocar el tubo o recipiente sobre el cabezal para activar la agitación.
-3.	Retirar el recipiente para detener automáticamente el funcionamiento.
-Modo continuo (Continuos)
-1.	Seleccionar el modo continuo.
-2.	Verificar que el equipo funcione de forma estable antes de iniciar la homogenización.
-3.	Supervisar permanentemente el proceso durante toda la operación.
-B.4 Configuración de parámetros
-Velocidad de agitación
-1.	Programar la velocidad requerida mediante los controles digitales.
-2.	Incrementar progresivamente las revoluciones hasta alcanzar la homogenización deseada.
-3.	Evitar velocidades excesivas que puedan generar espuma, derrames o formación de aerosoles.
-Temporizador
-1.	Configurar el tiempo de operación cuando el procedimiento lo requiera.
-2.	Verificar que el tiempo programado corresponda al método analítico o de preparación aplicable.
-B.5 Operación
-1.	Colocar el recipiente centrado sobre el accesorio de goma correspondiente.
-2.	Mantener el recipiente firmemente sujeto durante la homogenización.
-3.	Supervisar periódicamente la estabilidad del equipo y la ausencia de derrames.
-4.	Verificar en la pantalla digital los parámetros de velocidad y tiempo establecidos.
-B.6 Finalización de la operación
-1.	Detener la agitación mediante el botón de parada o al finalizar el tiempo programado.
-2.	Retirar cuidadosamente la muestra.
-3.	Apagar el equipo mediante el interruptor principal.
-4.	Desconectar el cable de alimentación cuando el equipo no vaya a utilizarse nuevamente.
-5.	Realizar la limpieza rutinaria posterior al uso.
-</span></div>
-    <div class="obs"><div class="obsl" id="obl-1">C. MANTENIMIENTO E HIGIENE</div><span id="obt-1">C.1 Limpieza rutinaria posterior al uso
-Responsable: Usuario o alumno autorizado.
-1.	Apagar y desconectar el equipo.
-2.	Verificar la ausencia de derrames o residuos visibles.
-3.	Limpiar la carcasa externa, el cabezal de goma y las superficies accesibles utilizando un paño suave humedecido con agua y detergente neutro.
-4.	Retirar los residuos de detergente mediante un paño humedecido únicamente con agua.
-5.	Secar completamente todas las superficies antes de almacenar o reutilizar el equipo.
-6.	Evitar el ingreso de líquidos al panel digital, pantalla LED o componentes internos.
-Registro: Documentar la actividad en el registro de uso del equipo.
-C.2 Limpieza preanalítica
-Responsable: Técnico de laboratorio.
-No aplica. El agitador de tubos constituye un equipo auxiliar destinado a la homogenización de muestras y reactivos, sin generar directamente resultados analíticos.
-C.3 Mantenimiento preventivo e higiene profunda
-Responsable: Técnico de laboratorio o personal autorizado.
-Frecuencia: Según cronograma establecido en el Plan de Mantenimiento Preventivo.
-Actividades
-1.	Inspección visual del estado general del equipo.
-2.	Verificación de la integridad del cabezal de goma y accesorios.
-3.	Revisión de patas de apoyo, cable de alimentación y conexiones eléctricas.
-4.	Limpieza profunda de la estructura externa, pantalla digital y panel de control mediante paño humedecido con alcohol isopropílico.
-5.	Limpieza de las ranuras de ventilación utilizando pincel de cerdas suaves o sistema de aspiración de baja potencia.
-6.	Verificación del correcto funcionamiento de la pantalla LED, controles digitales y temporizador.
-7.	Comprobación de la estabilidad de funcionamiento y ausencia de vibraciones anormales.
-8.	Reporte inmediato de cualquier anomalía detectada.</span></div>
+    <div class="obs-card" id="obs-card-0">
+      <div class="obs-card-hdr"><div class="obs-card-label" id="obl-0">PASOS</div></div>
+      <ul class="obs-bullet-list" id="obs-list-0"><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.1 Verificación previa</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Verificar que el equipo este limpio y sin residuos de usos</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Comprobar el estado de los sujetadores o plataforma de trabajo.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Verificar que las conexiones eléctricas estén en buen estado.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.2 Encendido y estabilización</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Conectar el equipo a la fuente de alimentación.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Encender el equipo y verificar el funcionamiento del sistema de control.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.3 Procedimiento de operación</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Colocar y asegurar los recipientes con las muestras en la plataforma.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Ajustar velocidad y tiempo según el procedimiento experimental.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Iniciar la agitación y verificar la estabilidad de los recipientes.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.4 Finalización</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Detener la agitación gradualmente.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Retirar los recipientes con precaución.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Apagar el equipo y desconectarlo si no se utilizara.</span></li></ul>
+    </div>
+    <div class="obs-card" id="obs-card-1">
+      <div class="obs-card-hdr"><div class="obs-card-label" id="obl-1">MANTENIMIENTO E HIGIENE</div></div>
+      <ul class="obs-bullet-list" id="obs-list-1"><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Limpieza e higiene del equipo</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Responsable: Usuario autorizado.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Procedimiento:</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Retirar los residuos sólidos de las superficies del equipo.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Limpiar las superficies externas con un paño suave y seco.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• En caso de derrames, realizar limpieza inmediata evitando ingreso de líquido al interior.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>• Verificar que el equipo quede limpio para el siguiente usuario.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Registro: Registrar la utilización en el formato de</span></li></ul>
+    </div>
   </div>
 </div>
 
@@ -391,7 +383,7 @@ E.P. INGENIERÍA AGROINDUSTRIAL</textarea></div>
       <div class="field"><label>Valor dato 4</label><input id="ef-sv3" value="RO / DI"></div>
       <div class="field"><label>Etiqueta dato 5 (ancho completo)</label><input id="ef-sk4" value="Aplicación"></div>
       <div class="field"><label>Valor dato 5</label><input id="ef-sv4" value="Purificación de agua para laboratorio de análisis"></div>
-      <div class="field"><label>Nota al pie</label><textarea id="ef-note" style="height: 72px;">Registrar la fecha de último cambio de membrana y cartuchos. El agua DI tiene alta agresividad química.</textarea></div>
+      <div class="field"><label>Nota al pie</label><textarea id="ef-note">Registrar la fecha de último cambio de membrana y cartuchos. El agua DI tiene alta agresividad química.</textarea></div>
     </div>
   </div>
 
@@ -401,30 +393,49 @@ E.P. INGENIERÍA AGROINDUSTRIAL</textarea></div>
     <div class="ed-sec-body">
       <div class="field"><label>Título sección</label><input id="ef-sec-pc" value="Ventajas y limitaciones"></div>
       <div class="field"><label>Título columna ventajas</label><input id="ef-pros-title" value="✓ Ventajas"></div>
-      <div class="field"><label>Ventaja 1</label><input id="ef-pro0" value="Agua sin impurezas para análisis precisos"></div>
-      <div class="field"><label>Ventaja 2</label><input id="ef-pro1" value="Doble purificación RO + DI"></div>
-      <div class="field"><label>Ventaja 3</label><input id="ef-pro2" value="Calidad reproducible en cada sesión"></div>
+      <div class="bullet-manager">
+        <div class="bullet-manager-hdr" style="color:#2ecc71">✓ Viñetas de ventajas</div>
+        <div class="bullet-rows" id="pros-rows"><div class="bullet-row"><input value="Agua sin impurezas para análisis precisos"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Doble purificación RO + DI"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Calidad reproducible en cada sesión"><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="add-row-btn" onclick="addRow(&#39;pros-rows&#39;)">+ Añadir ventaja</button>
+      </div>
       <div class="field"><label>Título columna limitaciones</label><input id="ef-cons-title" value="✕ Limitaciones"></div>
-      <div class="field"><label>Limitación 1</label><input id="ef-con0" value="Reemplazo periódico de filtros requerido"></div>
-      <div class="field"><label>Limitación 2</label><input id="ef-con1" value="Flujo de producción limitado por caudal"></div>
-      <div class="field"><label>Limitación 3</label><input id="ef-con2" value="No apto para consumo directo sin validar"></div>
+      <div class="bullet-manager">
+        <div class="bullet-manager-hdr" style="color:#e74c3c">✕ Viñetas de limitaciones</div>
+        <div class="bullet-rows" id="cons-rows"><div class="bullet-row"><input value="Reemplazo periódico de filtros requerido"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Flujo de producción limitado por caudal"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="No apto para consumo directo sin validar"><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="add-row-btn" onclick="addRow(&#39;cons-rows&#39;)">+ Añadir limitación</button>
+      </div>
     </div>
   </div>
 
   <!-- FUNCIONES -->
   <div class="ed-sec">
-    <div class="ed-sec-hdr" onclick="toggleSec(this)">⚙️ Funciones y observaciones <span class="ed-arrow">▾</span></div>
-    <div class="ed-sec-body">
+    <div class="ed-sec-hdr open" onclick="toggleSec(this)">⚙️ Funciones y observaciones <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body open">
       <div class="field"><label>Título sección funciones</label><input id="ef-sec-func" value="Lista de funciones"></div>
-      <div class="field"><label>Función 1</label><textarea id="ef-fn0">Producción de agua de alta pureza (tipo I y tipo II) para preparación de muestras</textarea></div>
-      <div class="field"><label>Función 2</label><textarea id="ef-fn1">Eliminación de cloruros, metales pesados y microorganismos mediante membrana RO</textarea></div>
-      <div class="field"><label>Función 3</label><textarea id="ef-fn2">Desionización final (DI) para análisis que requieren conductividad ultrabaja</textarea></div>
-      <div class="field"><label>Función 4</label><textarea id="ef-fn3">Suministro de agua neutra para evitar interferencias en pruebas de sabor y aroma</textarea></div>
+      <div class="bullet-manager">
+        <div class="bullet-manager-hdr">⚙️ Viñetas de funciones</div>
+        <div class="bullet-rows" id="fn-rows"><div class="bullet-row"><input value="Producción de agua de alta pureza (tipo I y tipo II) para preparación de muestras"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Eliminación de cloruros, metales pesados y microorganismos mediante membrana RO"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Desionización final (DI) para análisis que requieren conductividad ultrabaja"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Suministro de agua neutra para evitar interferencias en pruebas de sabor y aroma"><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="add-row-btn" onclick="addRow(&#39;fn-rows&#39;)">+ Añadir función</button>
+      </div>
       <div class="field"><label>Título sección observaciones</label><input id="ef-sec-obs" value="Observaciones al culminar"></div>
-      <div class="field"><label>Obs. etiqueta 1</label><input id="ef-obl0" value="Filtros"></div>
-      <div class="field"><label>Obs. texto 1</label><textarea id="ef-obt0">Registrar la fecha de último cambio de membrana y cartuchos.</textarea></div>
-      <div class="field"><label>Obs. etiqueta 2</label><input id="ef-obl1" value="Recipientes"></div>
-      <div class="field"><label>Obs. texto 2</label><textarea id="ef-obt1">Usar solo recipientes de plástico o vidrio borosilicato; el agua DI lixivia metales.</textarea></div>
+
+      <div class="obs-manager">
+        <div class="obs-manager-hdr">📌 Sección 1 — Etiqueta y viñetas</div>
+        <div class="obs-label-field"><input id="ef-obl0" value="Filtros" placeholder="Título de la sección (ej: Pasos)"></div>
+        <div class="obs-rows" id="obs-rows-0">
+          
+        <div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="obs-add-btn" onclick="addRow(&#39;obs-rows-0&#39;)">+ Añadir viñeta</button>
+      </div>
+
+      <div class="obs-manager">
+        <div class="obs-manager-hdr">📌 Sección 2 — Etiqueta y viñetas</div>
+        <div class="obs-label-field"><input id="ef-obl1" value="Mantenimiento e Higiene" placeholder="Título de la sección (ej: Mantenimiento)"></div>
+        <div class="obs-rows" id="obs-rows-1">
+          <div class="bullet-row"><input value="Usar solo recipientes de plástico o vidrio borosilicato; el agua DI lixivia metales."><button class="del-row-btn" onclick="delRow(this)">✕</button></div>
+        <div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="obs-add-btn" onclick="addRow(&#39;obs-rows-1&#39;)">+ Añadir viñeta</button>
+      </div>
     </div>
   </div>
 
@@ -442,8 +453,8 @@ E.P. INGENIERÍA AGROINDUSTRIAL</textarea></div>
 
   <!-- SEGURIDAD -->
   <div class="ed-sec">
-    <div class="ed-sec-hdr open" onclick="toggleSec(this)">⚠️ Seguridad <span class="ed-arrow">▾</span></div>
-    <div class="ed-sec-body open">
+    <div class="ed-sec-hdr" onclick="toggleSec(this)">⚠️ Seguridad <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body">
       <div class="field"><label>Título sección seguridad</label><input id="ef-sec-seg" value="Advertencias de seguridad"></div>
       <div class="field"><label>Ícono advertencia 1</label><input id="ef-sico0" value="⚠️"></div>
       <div class="field"><label>Texto advertencia 1</label><textarea id="ef-sft0">El agua DI puede lixiviar metales; usar solo recipientes plástico o vidrio borosilicato.</textarea></div>
@@ -458,6 +469,20 @@ E.P. INGENIERÍA AGROINDUSTRIAL</textarea></div>
 
   <button class="save-btn" onclick="saveData()">💾 Guardar cambios</button>
   <button class="dl-btn" onclick="downloadHTML()">⬇ Descargar HTML actualizado</button>
+</div>
+</div>
+
+<!-- ══ PASSWORD MODAL ══ -->
+<div class="pwd-bg" id="pwdBg">
+<div class="pwd-box">
+  <div class="pwd-icon">🔒</div>
+  <div class="pwd-title">Acceso restringido</div>
+  <div class="pwd-sub">Ingresa la contraseña para editar esta ficha</div>
+  <input class="pwd-input" id="pwdInput" type="password" maxlength="20" placeholder="••••••" onkeydown="if(event.key===&#39;Enter&#39;)checkPwd()">
+  <div class="pwd-error" id="pwdError"></div>
+  <button class="pwd-btn" onclick="checkPwd()">🔓 Ingresar</button>
+  <button class="pwd-cancel" onclick="closePwd()">Cancelar</button>
+  <div class="pwd-attempts" id="pwdAttempts"></div>
 </div>
 </div>
 
@@ -495,7 +520,49 @@ function toggleSec(hdr){
   hdr.nextElementSibling.classList.toggle('open');
 }
 // ── MODAL
-function openEditor(){document.getElementById('modalBg').classList.add('open')}
+// ── PASSWORD PROTECTION
+const _PWD = (function(){const h=[76,97,98,50,48,50,52];return h.map(c=>String.fromCharCode(c)).join('')})();
+let _attempts=0;const _MAX=5;let _locked=false;let _lockUntil=0;
+function openEditor(){
+  if(_locked&&Date.now()<_lockUntil){
+    const s=Math.ceil((_lockUntil-Date.now())/1000);
+    document.getElementById('pwdAttempts').textContent='Bloqueado. Intenta en '+s+'s';
+    document.getElementById('pwdBg').classList.add('open');return;
+  }
+  if(_locked)_locked=false;
+  document.getElementById('pwdInput').value='';
+  document.getElementById('pwdError').textContent='';
+  document.getElementById('pwdAttempts').textContent=_attempts>0?(_MAX-_attempts)+' intentos restantes':'';
+  document.getElementById('pwdBg').classList.add('open');
+  setTimeout(()=>document.getElementById('pwdInput').focus(),100);
+}
+function closePwd(){document.getElementById('pwdBg').classList.remove('open')}
+function checkPwd(){
+  if(_locked&&Date.now()<_lockUntil){
+    const s=Math.ceil((_lockUntil-Date.now())/1000);
+    document.getElementById('pwdAttempts').textContent='Bloqueado. Intenta en '+s+'s';return;
+  }
+  const inp=document.getElementById('pwdInput');
+  const err=document.getElementById('pwdError');
+  const att=document.getElementById('pwdAttempts');
+  if(inp.value===_PWD){
+    _attempts=0;closePwd();
+    document.getElementById('modalBg').classList.add('open');
+  } else {
+    _attempts++;
+    inp.value='';
+    inp.classList.add('error');setTimeout(()=>inp.classList.remove('error'),400);
+    if(_attempts>=_MAX){
+      _locked=true;_lockUntil=Date.now()+60000;
+      err.textContent='Demasiados intentos. Bloqueado 60 segundos.';
+      att.textContent='';
+      setTimeout(()=>{_locked=false;err.textContent='';att.textContent='';},60000);
+    } else {
+      err.textContent='Contraseña incorrecta.';
+      att.textContent=(_MAX-_attempts)+' intentos restantes';
+    }
+  }
+}
 function closeEditor(){document.getElementById('modalBg').classList.remove('open')}
 // ── COLORS
 function applyColors(c1,c2,c3){
@@ -581,7 +648,15 @@ function applyData(d){
   });
 }
 function saveData(){
-  const d=getData();applyData(d);
+  const d=getData();
+  d.fnItems=getRowValues('fn-rows');
+  d.prosItems=getRowValues('pros-rows');
+  d.consItems=getRowValues('cons-rows');
+  d.obsItems0=getRowValues('obs-rows-0');
+  d.obsItems1=getRowValues('obs-rows-1');
+  applyData(d);
+  syncRowsToDisplay();
+  syncObsToDisplay();
   localStorage.setItem('lab_purificador',JSON.stringify(d));
   closeEditor();
 }
@@ -621,11 +696,92 @@ function downloadQR(){
 }
 // ── LOAD SAVED
 window.addEventListener('load',()=>{
-  const saved=localStorage.getItem('lab_purificador');if(saved)applyData(JSON.parse(saved));
+  const saved=localStorage.getItem('lab_purificador');
+  if(saved){const d=JSON.parse(saved);applyData(d);loadRowsFromData(d);syncRowsToDisplay();loadObsFromData(d);syncObsToDisplay();}
   const savedImg=localStorage.getItem('lab_purificador_img');if(savedImg)setImg(savedImg);
   const savedUrl=localStorage.getItem('lab_purificador_url');if(savedUrl)document.getElementById('qrUrlInput').value=savedUrl;
   document.getElementById('qrUrlInput').addEventListener('input',()=>{renderQR();document.getElementById('urlCopyBtn').classList.remove('copied');document.getElementById('urlCopyBtn').textContent='Copiar'});
 });
+
+// ── DYNAMIC BULLET LISTS ──────────────────────────────────────────────────
+function addRow(containerId){
+  const rows=document.getElementById(containerId);
+  const div=document.createElement('div');div.className='bullet-row';
+  div.innerHTML='<input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button>';
+  rows.appendChild(div);
+  div.querySelector('input').focus();
+}
+function delRow(btn){
+  const row=btn.closest('.bullet-row');
+  const rows=row.parentElement;
+  if(rows.querySelectorAll('.bullet-row').length>1)row.remove();
+  else{row.querySelector('input').value='';row.querySelector('input').focus();}
+}
+function getRowValues(containerId){
+  return Array.from(document.querySelectorAll('#'+containerId+' .bullet-row input'))
+    .map(i=>i.value.trim()).filter(v=>v!=='');
+}
+function renderBulletList(listId,items,dotClass){
+  const ul=document.getElementById(listId);if(!ul)return;
+  ul.innerHTML=items.map(item=>
+    '<li class="bullet-item"><div class="bullet-dot"></div><span>'+escHtml(item)+'</span></li>'
+  ).join('');
+}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function syncRowsToDisplay(){
+  renderBulletList('func-list-display', getRowValues('fn-rows'));
+  renderBulletList('pros-list-display', getRowValues('pros-rows'));
+  renderBulletList('cons-list-display', getRowValues('cons-rows'));
+}
+function loadRowsFromData(data){
+  function setRows(containerId, items){
+    const rows=document.getElementById(containerId);if(!rows)return;
+    rows.innerHTML='';
+    items.forEach(val=>{
+      const div=document.createElement('div');div.className='bullet-row';
+      div.innerHTML='<input value="'+escHtml(val)+'"><button class="del-row-btn" onclick="delRow(this)">✕</button>';
+      rows.appendChild(div);
+    });
+    if(rows.querySelectorAll('.bullet-row').length===0)addRow(containerId);
+  }
+  if(data.fnItems)setRows('fn-rows',data.fnItems);
+  if(data.prosItems)setRows('pros-rows',data.prosItems);
+  if(data.consItems)setRows('cons-rows',data.consItems);
+}
+
+
+// ── OBS BULLET LISTS ─────────────────────────────────────────────────────
+function syncObsToDisplay(){
+  [0,1].forEach(i=>{
+    const label=document.getElementById('ef-obl'+i);
+    const lbl=document.getElementById('obl-'+i);
+    if(label&&lbl)lbl.textContent=label.value;
+    const items=getRowValues('obs-rows-'+i);
+    const ul=document.getElementById('obs-list-'+i);
+    if(!ul)return;
+    ul.innerHTML=items.map(item=>
+      '<li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>'+escHtml(item)+'</span></li>'
+    ).join('');
+  });
+}
+function loadObsFromData(data){
+  [0,1].forEach(i=>{
+    const lbl=document.getElementById('ef-obl'+i);
+    if(lbl&&data['obl'+i])lbl.value=data['obl'+i];
+    const key='obsItems'+i;
+    if(data[key]){
+      const rows=document.getElementById('obs-rows-'+i);if(!rows)return;
+      rows.innerHTML='';
+      data[key].forEach(val=>{
+        const div=document.createElement('div');div.className='bullet-row';
+        div.innerHTML='<input value="'+escHtml(val)+'"><button class="del-row-btn" onclick="delRow(this)">✕</button>';
+        rows.appendChild(div);
+      });
+      if(!rows.querySelectorAll('.bullet-row').length)addRow('obs-rows-'+i);
+    }
+  });
+}
+
 </script>
 
 </body></html>
