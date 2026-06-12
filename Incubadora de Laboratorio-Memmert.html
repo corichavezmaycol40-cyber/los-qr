@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///C:/Users/LENOVO/Downloads/equipo-purificador%20(17).html -->
+<html lang="es" style="--c1: #2873b8; --c2: #5fe3da; --c3: #1a7475;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Incubadora de Laboratorio | UNIVERSIDAD NACIONAL</title>
+<link href="./Incubadora de Laboratorio-Memmert_files/css2" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --c1:#2980b9;
+  --c2:#5dade2;
+  --c3:#1a5276;
+  --navy:#071227;--navy2:#0d1f3c;--navy3:#162a4a;
+  --accent:var(--c1);--acl:var(--c2);
+  --gold:#e8a933;--goldl:#f5c96a;
+  --w:#fff;
+  --muted:rgba(255,255,255,.6);--dim:rgba(255,255,255,.35);
+  --bd:rgba(255,255,255,.1);--bd2:rgba(255,255,255,.2);
+  --cbg:rgba(255,255,255,.05);
+  --ok:#2ecc71;--err:#e74c3c
+}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--w);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 20%,rgba(42,127,255,.08) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 20% 80%,rgba(232,169,51,.06) 0%,transparent 60%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding-bottom:80px}
+/* HEADER */
+.hdr{background:rgba(13,31,60,.97);border-bottom:1px solid var(--bd);padding:18px 18px 0}
+.hdr-logos{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.hdr-logos img{height:46px;object-fit:contain;filter:brightness(1.1)}
+.hdr-center{flex:1;text-align:center}
+.uni{font-size:7.5px;font-weight:600;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;line-height:1.5}
+.lbadge{margin-top:5px;display:inline-flex;align-items:center;gap:5px;background:rgba(42,127,255,.15);border:1px solid rgba(42,127,255,.3);border-radius:20px;padding:3px 10px;font-size:8px;font-weight:600;letter-spacing:.1em;color:var(--acl);text-transform:uppercase}
+.lbadge::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+/* TABS */
+.tabs{display:flex;gap:2px;margin-top:12px;border-bottom:1px solid var(--bd)}
+.tab{flex:1;background:none;border:none;padding:10px 4px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer;position:relative;transition:color .2s}
+.tab.on{color:var(--w)}
+.tab.on::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent);border-radius:2px 2px 0 0}
+.panel{display:none}.panel.on{display:block}
+/* EQ HEADER */
+.eq-hdr{position:relative;height:200px;background:var(--navy2);overflow:hidden;cursor:pointer}
+.eq-hdr:hover .img-hint{opacity:1}
+.img-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:8px 14px;font-size:11px;color:#fff;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;z-index:5}
+.eq-hdr-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:78px}
+.eq-hdr-inner img.eq-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.88}
+#imgInput{display:none}
+.eq-over{position:absolute;bottom:0;left:0;right:0;padding:18px 18px 13px;background:linear-gradient(0deg,rgba(7,18,39,.95) 0%,transparent 100%)}
+.etag{display:inline-block;background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);color:var(--acl);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:6px}
+.ename{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;line-height:1.2}
+.ebrand{font-size:12px;color:var(--goldl);font-weight:500;margin-top:3px}
+/* SECTIONS */
+.sec{padding:13px 18px;border-bottom:1px solid var(--bd)}
+.sec-t{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--bd)}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.si{background:var(--cbg);border:1px solid var(--bd);border-radius:10px;padding:10px 12px}
+.si.fw{grid-column:1/-1}
+.sk{font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.sv{font-size:13px;font-weight:500;color:var(--w);line-height:1.3}
+.sv.ac{color:var(--acl)}.sv.go{color:var(--goldl)}
+/* PROS/CONS */
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pb{background:rgba(46,204,113,.06);border:1px solid rgba(46,204,113,.2);border-radius:10px;padding:12px}
+.cb{background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.2);border-radius:10px;padding:12px}
+.pct{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+.pb .pct{color:var(--ok)}.cb .pct{color:var(--err)}
+.pci{font-size:11px;line-height:1.4;color:rgba(255,255,255,.75);margin-bottom:3px;padding-left:10px;position:relative}
+.pci::before{content:'•';position:absolute;left:0}
+.pb .pci::before{color:var(--ok)}.cb .pci::before{color:var(--err)}
+/* FUNCTIONS */
+.fl{list-style:none}
+.fi{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:12px;color:rgba(255,255,255,.8);line-height:1.4}
+.fi:last-child{border-bottom:none}
+.fd{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+/* RESPONSIBLE */
+.rcard{margin:13px 18px;background:var(--cbg);border:1px solid var(--bd);border-radius:14px;padding:13px;display:flex;align-items:center;gap:13px}
+.rav{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,rgba(42,127,255,.3),rgba(232,169,51,.3));border:2px solid rgba(42,127,255,.4);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--acl);flex-shrink:0}
+.rrole{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.rname{font-size:15px;font-weight:600;color:var(--w);margin-bottom:2px}
+.rarea{font-size:11px;color:var(--muted)}
+/* SAFETY */
+.sitem{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:var(--cbg);border:1px solid var(--bd);border-radius:10px;margin-bottom:7px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.4}
+.sico{font-size:15px;flex-shrink:0}
+/* NOTE */
+.nfoot{margin:10px 18px;padding:10px 13px;background:rgba(255,255,255,.04);border-left:2px solid var(--accent);border-radius:0 8px 8px 0;font-size:11px;color:var(--muted);line-height:1.5}
+/* OBS */
+.obs{background:rgba(232,169,51,.08);border:1px solid rgba(232,169,51,.25);border-radius:10px;padding:11px 13px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:7px}
+.obsl{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--goldl);margin-bottom:4px}
+/* STATUS BAR */
+.stbar{display:flex;align-items:center;justify-content:space-between;padding:9px 18px;border-top:1px solid var(--bd);background:rgba(7,18,39,.92);position:sticky;bottom:0;z-index:10;gap:6px}
+.stinfo{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);min-width:0;overflow:hidden}
+.stdot{width:7px;height:7px;border-radius:50%;background:var(--ok);animation:blink 2s infinite;flex-shrink:0}
+.stname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-btn{display:flex;align-items:center;gap:5px;border-radius:20px;padding:5px 11px;font-size:10px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.qr-btn{background:rgba(42,127,255,.15);border:1px solid rgba(42,127,255,.3);color:var(--acl)}
+.qr-btn:hover{background:rgba(42,127,255,.25)}
+.edit-btn{background:rgba(232,169,51,.12);border:1px solid rgba(232,169,51,.3);color:var(--goldl)}
+.edit-btn:hover{background:rgba(232,169,51,.22)}
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100;align-items:flex-start;justify-content:center;padding:12px;overflow-y:auto}
+.modal-bg.open{display:flex}
+.modal{background:var(--navy2);border:1px solid var(--bd2);border-radius:16px;width:100%;max-width:460px;padding:18px;margin:auto}
+.modal-t{font-size:14px;font-weight:700;color:var(--w);margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
+.modal-sub{font-size:10px;color:var(--muted);margin-bottom:14px}
+.close-btn{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+/* EDITOR SECTIONS */
+.ed-sec{margin-bottom:4px}
+.ed-sec-hdr{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:rgba(255,255,255,.06);border:1px solid var(--bd);border-radius:8px;cursor:pointer;font-size:11px;font-weight:600;color:var(--w);letter-spacing:.04em;margin-bottom:2px}
+.ed-sec-hdr:hover{background:rgba(255,255,255,.1)}
+.ed-sec-body{padding:4px 0 8px;display:none}
+.ed-sec-body.open{display:block}
+.ed-arrow{font-size:10px;color:var(--muted);transition:transform .2s}
+.ed-sec-hdr.open .ed-arrow{transform:rotate(180deg)}
+/* FIELDS */
+.field{margin-bottom:10px}
+.field label{display:block;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.field input,.field textarea,.field select{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:8px;padding:7px 10px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;transition:border .2s}
+.field input[type=color]{padding:3px 6px;height:34px;cursor:pointer}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(42,127,255,.6)}
+.field textarea{resize:vertical;min-height:56px}
+.field select option{background:#0d1f3c;color:#fff}
+.color-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.save-btn{width:100%;background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);border-radius:10px;padding:10px;color:var(--acl);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:6px}
+.save-btn:hover{background:rgba(42,127,255,.35)}
+.dl-btn{width:100%;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.25);border-radius:10px;padding:10px;color:#7be3a8;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:6px}
+.dl-btn:hover{background:rgba(46,204,113,.22)}
+/* IMG UPLOAD */
+.img-upload-btn{width:100%;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.3);border-radius:8px;padding:9px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s}
+.img-upload-btn:hover{background:rgba(255,255,255,.12)}
+.img-preview{width:100%;height:90px;object-fit:cover;border-radius:8px;margin-top:6px;display:none;border:1px solid var(--bd2)}
+.img-remove-btn{width:100%;background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.25);border-radius:8px;padding:6px;color:#f5a5a5;font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;margin-top:5px;display:none}
+/* QR PANEL */
+.qr-panel-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;padding:16px}
+.qr-panel-bg.open{display:flex}
+.qr-panel{background:var(--navy2);border:1px solid var(--bd2);border-radius:18px;width:100%;max-width:340px;padding:20px;text-align:center}
+.qr-panel-t{font-size:15px;font-weight:700;color:var(--w);margin-bottom:3px}
+.qr-panel-sub{font-size:11px;color:var(--muted);margin-bottom:16px}
+.qr-box{background:#fff;border-radius:12px;padding:12px;display:inline-block;margin-bottom:12px}
+.url-row{display:flex;gap:6px;margin-bottom:10px}
+.url-input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:8px;padding:7px 10px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;outline:none}
+.url-input:focus{border-color:rgba(42,127,255,.6)}
+.url-copy-btn{background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);border-radius:8px;padding:7px 10px;color:var(--acl);font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.url-copy-btn.copied{background:rgba(46,204,113,.2);border-color:rgba(46,204,113,.4);color:#7be3a8}
+.qr-hint{font-size:10px;color:var(--dim);line-height:1.5;margin-bottom:10px}
+.qr-hint a{color:var(--acl);text-decoration:none}
+.qr-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.qr-dl-btn{background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.25);border-radius:10px;padding:9px;color:#7be3a8;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
+.netlify-btn{background:rgba(0,175,240,.12);border:1px solid rgba(0,175,240,.25);border-radius:10px;padding:9px;color:#7dd4f0;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;display:block}
+.qr-close-btn{width:100%;background:none;border:1px solid var(--bd);border-radius:10px;padding:8px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer}
+hr.sep{border:none;border-top:1px solid var(--bd);margin:10px 0}
+/* PASSWORD MODAL */
+.pwd-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:300;align-items:center;justify-content:center;padding:20px}
+.pwd-bg.open{display:flex}
+.pwd-box{background:var(--navy2);border:1px solid var(--bd2);border-radius:18px;width:100%;max-width:320px;padding:24px;text-align:center}
+.pwd-icon{font-size:36px;margin-bottom:10px}
+.pwd-title{font-size:16px;font-weight:700;color:var(--w);margin-bottom:4px}
+.pwd-sub{font-size:11px;color:var(--muted);margin-bottom:18px}
+.pwd-input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:10px;padding:10px 14px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;text-align:center;letter-spacing:.2em;margin-bottom:10px;transition:border .2s}
+.pwd-input:focus{border-color:rgba(42,127,255,.6)}
+.pwd-input.error{border-color:rgba(231,76,60,.7);animation:shake .3s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pwd-btn{width:100%;background:rgba(42,127,255,.2);border:1px solid rgba(42,127,255,.4);border-radius:10px;padding:10px;color:var(--acl);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:8px}
+.pwd-btn:hover{background:rgba(42,127,255,.35)}
+.pwd-cancel{width:100%;background:none;border:1px solid var(--bd);border-radius:10px;padding:8px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all .2s}
+.pwd-cancel:hover{background:rgba(255,255,255,.05)}
+.pwd-error{font-size:11px;color:#e74c3c;margin-bottom:8px;min-height:16px}
+.pwd-attempts{font-size:10px;color:var(--dim);margin-top:4px}
+
+/* Dynamic bullet lists */
+.bullet-list{list-style:none;margin:0;padding:0}
+.bullet-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:12px;color:rgba(255,255,255,.8);line-height:1.4}
+.bullet-item:last-child{border-bottom:none}
+.bullet-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
+.pros-list .bullet-dot{background:var(--ok)}
+.cons-list .bullet-dot{background:var(--err)}
+/* Editor bullet manager */
+.bullet-manager{border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.bullet-manager-hdr{padding:8px 12px;background:rgba(255,255,255,.05);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.bullet-rows{padding:6px 8px}
+.bullet-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.bullet-row input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:7px;padding:6px 9px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;outline:none;transition:border .2s}
+.bullet-row input:focus{border-color:rgba(42,127,255,.5)}
+.del-row-btn{background:rgba(231,76,60,.15);border:1px solid rgba(231,76,60,.25);border-radius:7px;padding:5px 8px;color:#f5a5a5;font-size:12px;cursor:pointer;flex-shrink:0;transition:all .2s;line-height:1}
+.del-row-btn:hover{background:rgba(231,76,60,.3)}
+.add-row-btn{width:100%;background:rgba(42,127,255,.1);border:1px dashed rgba(42,127,255,.3);border-radius:7px;padding:6px;color:var(--acl);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;transition:all .2s;margin:4px 0 6px}
+.add-row-btn:hover{background:rgba(42,127,255,.2)}
+
+/* Obs sections with bullet lists */
+.obs-card{background:rgba(232,169,51,.06);border:1px solid rgba(232,169,51,.2);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.obs-card-hdr{padding:10px 14px 8px;border-bottom:1px solid rgba(232,169,51,.15)}
+.obs-card-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--goldl)}
+.obs-bullet-list{list-style:none;padding:8px 14px 10px;margin:0}
+.obs-bullet-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:12px;color:rgba(255,255,255,.82);line-height:1.5;border-bottom:1px solid rgba(255,255,255,.05)}
+.obs-bullet-item:last-child{border-bottom:none}
+.obs-bullet-dot{width:5px;height:5px;border-radius:50%;background:var(--goldl);flex-shrink:0;margin-top:6px}
+/* Obs manager in editor */
+.obs-manager{border:1px solid rgba(232,169,51,.25);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.obs-manager-hdr{padding:8px 12px;background:rgba(232,169,51,.08);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--goldl)}
+.obs-label-field{padding:6px 8px 2px}
+.obs-label-field input{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--bd2);border-radius:7px;padding:6px 9px;color:var(--w);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;outline:none}
+.obs-label-field input:focus{border-color:rgba(232,169,51,.5)}
+.obs-rows{padding:4px 8px}
+.obs-add-btn{width:calc(100% - 16px);margin:0 8px 8px;background:rgba(232,169,51,.08);border:1px dashed rgba(232,169,51,.3);border-radius:7px;padding:6px;color:var(--goldl);font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;transition:all .2s}
+.obs-add-btn:hover{background:rgba(232,169,51,.18)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-logos">
+    <img id="logo-left" src="./Incubadora de Laboratorio-Memmert_files/logo-agroindustrial-left.png" alt="Logo izquierda" onerror="this.style.display=&#39;none&#39;">
+    <div class="hdr-center">
+      <div class="uni" id="hdr-uni">UNIVERSIDAD NACIONAL
+HERMILIO VALDIZÁN
+FAC. CIENCIAS AGRARIAS
+E.P. INGENIERÍA AGROINDUSTRIAL</div>
+      <div class="lbadge" id="hdr-badge">Lab. Microbiología </div>
+    </div>
+    <img id="logo-right" src="./Incubadora de Laboratorio-Memmert_files/logo-unheval-right.png" alt="Logo derecha" onerror="this.style.display=&#39;none&#39;">
+  </div>
+  <div class="tabs">
+    <button class="tab on" onclick="sw(&#39;ficha&#39;,this)">Ficha</button>
+    <button class="tab" onclick="sw(&#39;func&#39;,this)">Funciones</button>
+    <button class="tab" onclick="sw(&#39;resp&#39;,this)">Responsable</button>
+    <button class="tab" onclick="sw(&#39;seg&#39;,this)">Seguridad</button>
+  </div>
+</div>
+
+<!-- FICHA -->
+<div class="panel on" id="p-ficha">
+  <div class="eq-hdr" onclick="reqPwdForImg()">
+    <span class="img-hint">🔒 Requiere contraseña para cambiar imagen</span>
+    <input type="file" id="imgInput" accept="image/*" onchange="handleImgUpload(event)">
+    <div class="eq-hdr-inner"><span id="eq-emoji" style="opacity: 0;">🧪</span><img class="eq-img" id="eq-img-main" src="data:image/png;base64,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ITT/0ie1B5J6m6T5tiVRdI/44kO/8Nl8O7Y7YCS11betJ583d4dizCNqP+D8YoLQ3sYBptMgVsAI9vQBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMOL/AESGayoJuBUYAAAAAElFTkSuQmCC" style="display: block;"></div>
+    <div class="eq-over">
+      <div class="etag" id="eq-tag-d">Equipo de incubación y control ambiental en laboratorio</div>
+      <div class="ename" id="eq-name-d">Incubadora de Laboratorio</div>
+      <div class="ebrand" id="eq-brand-d">Memmert; BE-400</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-t" id="sec-t-specs">Datos técnicos</div>
+    <div class="sgrid">
+      <div class="si"><div class="sk" id="sk0">Marca</div><div class="sv go" id="sv0">Memmert</div></div>
+      <div class="si"><div class="sk" id="sk1">Modelo</div><div class="sv" id="sv1">BE-400</div></div>
+      <div class="si"><div class="sk" id="sk2">CÓDIGO DEL EQUIPO</div><div class="sv" id="sv2">LMIC-INC-01</div></div>
+      <div class="si"><div class="sk" id="sk3">Color</div><div class="sv ac" id="sv3">PLOMO</div></div>
+      <div class="si fw"><div class="sk" id="sk4">Aplicación</div><div class="sv ac" id="sv4">La incubadora de laboratorio Memmert BE-400 se aplica en microbiología para la incubación de cultivos, el mantenimiento de condiciones ambientales, y el control de calidad de muestras, garantizando condiciones óptimas para el crecimiento y análisis de microorganismos.</div></div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-t" id="sec-t-pc">Ventajas y limitaciones</div>
+    <div class="pc">
+      <div class="pb">
+        <div class="pct" id="pros-title">✓ Ventajas</div>
+        <ul class="bullet-list pros-list" id="pros-list-display"><li class="bullet-item"><div class="bullet-dot"></div><span>Control preciso de temperatura para cultivos biológicos.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Distribución uniforme gracias a ventilación interna.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Compatibilidad con placas, matraces y tubos.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Diseño robusto para uso prolongado.</span></li></ul>
+      </div>
+      <div class="cb">
+        <div class="pct" id="cons-title">✕ Limitaciones</div>
+        <ul class="bullet-list cons-list" id="cons-list-display"><li class="bullet-item"><div class="bullet-dot"></div><span>Capacidad limitada según volumen de la cámara.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>No apta para materiales inflamables.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Requiere mantenimiento frecuente de resistencias y ventiladores.</span></li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="nfoot" id="eq-note">El mantenimiento periódico de la cámara y resistencias, junto con el cumplimiento estricto de protocolos de bioseguridad, asegura la eficacia del equipo y la seguridad del operador</div>
+</div>
+
+<!-- FUNCIONES -->
+<div class="panel" id="p-func">
+  <div class="sec">
+    <div class="sec-t" id="sec-t-func">Lista de funciones</div>
+    <ul class="fl">
+      <ul class="bullet-list" id="func-list-display"><li class="bullet-item"><div class="bullet-dot"></div><span>Incubación controlada de cultivos microbiológicos</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Mantenimiento de temperatura constante para experimentos prolongados.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Apoyo en control de calidad en procesos biológicos</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Preparación segura de muestras para análisis.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>1. Equipos de protección personal (EPP)</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Bata de laboratorio.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Guantes, cuando la naturaleza de la muestra lo requiera.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Gafas de seguridad, cuando exista riesgo de polvo o salpicaduras.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>2. Restricciones de uso</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>No sobrecargar la cámara de incubación.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>No colocar materiales inflamables dentro de la incubadora</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>No abrir la cámara innecesariamente durante los periodos de incubación.</span></li><li class="bullet-item"><div class="bullet-dot"></div><span>Verificar la temperatura antes de colocar los cultivos.</span></li></ul>
+    </ul>
+  </div>
+  <div class="sec">
+    <div class="sec-t" id="sec-t-obs">PROCEDIMIENTO DE OPERACIÓN</div>
+    <div class="obs-card" id="obs-card-0">
+      <div class="obs-card-hdr"><div class="obs-card-label" id="obl-0">PASOS</div></div>
+      <ul class="obs-bullet-list" id="obs-list-0"><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.1 Verificación previa</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Verificar que el interior de la incubadora este limpio</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Comprobar que los estantes estén bien colocados.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Verificar la temperatura actual del equipo y el correcto funcionamiento.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.2 Encendido y estabilización</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Encender el equipo y configurar la temperatura de incubación según el procedimiento</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Esperar a que el equipo alcance y estabilice la temperatura programada</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.3 Procedimiento de operación</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Introducir los materiales de cultivo en el interior de la incubadora.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Cerrar la puerta de la cámara de forma segura</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Registrar la temperatura y hora de inicio en el formato de control.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>B.4 Finalización</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Retirar los cultivos al concluir el tiempo de incubación</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Registrar la hora de finalización y temperatura en el formato de control.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Mantener la incubadora encendida si hay otros cultivos en proceso.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Apagar el equipo si no se utilizara por periodos prolongados.</span></li></ul>
+    </div>
+    <div class="obs-card" id="obs-card-1">
+      <div class="obs-card-hdr"><div class="obs-card-label" id="obl-1">MANTENIMIENTO E HIGIENE</div></div>
+      <ul class="obs-bullet-list" id="obs-list-1"><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Limpieza e higiene del equipo</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Responsable: Usuario autorizado.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Procedimiento:</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Retirar residuos sólidos de la cámara.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Lavar bandejas con detergente neutro, evitando productos abrasivos.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Desinfectar superficies externas con paño húmedo.</span></li><li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>Secar completamente antes de volver a encender o almacenar el equipo.</span></li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- RESPONSABLE -->
+<div class="panel" id="p-resp">
+  <div class="rcard">
+    <div class="rav" id="eq-enc-av">MG</div>
+    <div>
+      <div class="rrole" id="eq-rol">Encargada del Laboratorio de Microbiología.</div>
+      <div class="rname" id="eq-enc">Mg. Eva Orizano Ponce</div>
+      <div class="rarea" id="eq-area">UNHEVAL</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="sec-t">Datos relevantes</div>
+    <div class="sgrid">
+      <div class="si fw"><div class="sk">Institución</div><div class="sv ac" id="eq-inst2">E.P. Ingeniería Agroindustrial — UNHEVAL</div></div>
+      <div class="si fw"><div class="sk">Contacto / Correo</div><div class="sv" id="eq-contact"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEGURIDAD -->
+<div class="panel" id="p-seg">
+  <div class="sec">
+    <div class="sec-t" id="sec-t-seg">A. ADVERTENCIAS DE SEGURIDAD (RIESGOS)</div>
+    <div class="sitem"><div class="sico" id="sico-0">RIESGO</div><span id="sft-0">El uso de la incubadora implica riesgo de quemaduras por contacto con superficies calientes, fallos eléctricos si no se mantiene adecuadamente, y contaminación si no se limpian la cámara y bandejas con regularidad</span></div>
+    <div class="sitem"><div class="sico" id="sico-1">Riesgo mecánico:</div><span id="sft-1">Riesgo de quemaduras por contacto con superficies internas calientes.</span></div>
+    <div class="sitem"><div class="sico" id="sico-2">Riesgo eléctrico:</div><span id="sft-2">Riesgo de falla en el sistema de calentamiento o control de temperatura.</span></div>
+    <div class="sitem"><div class="sico" id="sico-3">Riesgo químico:</div><span id="sft-3">Exposición a reactivos o sustancias químicas puede deteriorar los componentes del equipo.</span></div>
+  </div>
+</div>
+
+<!-- STATUS BAR -->
+<div class="stbar">
+  <div class="stinfo"><div class="stdot"></div><span class="stname" id="eq-name-st">Incubadora de Laboratorio</span></div>
+  <button class="bar-btn qr-btn" onclick="openQR()">⬛ QR</button>
+  <button class="bar-btn edit-btn" onclick="openEditor()">✏ Editar</button>
+</div>
+</div>
+
+<!-- ══ MODAL EDITOR ══ -->
+<div class="modal-bg" id="modalBg">
+<div class="modal">
+  <div class="modal-t">Editor completo <button class="close-btn" onclick="closeEditor()">×</button></div>
+  <div class="modal-sub">Todos los campos son editables. Toca una sección para expandirla.</div>
+
+  <!-- APARIENCIA -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr open" onclick="toggleSec(this)">🎨 Apariencia y colores <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body open">
+      <div class="field"><label>Emoji del equipo</label><input id="ef-emoji" value="🔬" placeholder="🔥"></div>
+      <div class="color-row">
+        <div class="field"><label>Color primario</label><input type="color" id="ef-c1" value="#2980b9"></div>
+        <div class="field"><label>Color secundario</label><input type="color" id="ef-c2" value="#5dade2"></div>
+        <div class="field"><label>Color acento</label><input type="color" id="ef-c3" value="#1a5276"></div>
+      </div>
+      <div class="field"><label>Imagen del equipo</label>
+        <div class="img-upload-btn" onclick="document.getElementById(&#39;imgInput2&#39;).click()">📷 Seleccionar imagen</div>
+        <input type="file" id="imgInput2" style="display:none" accept="image/*" onchange="handleImgUpload(event)">
+        <img id="img-preview-modal" class="img-preview" src="data:image/png;base64,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ITT/0ie1B5J6m6T5tiVRdI/44kO/8Nl8O7Y7YCS11betJ583d4dizCNqP+D8YoLQ3sYBptMgVsAI9vQBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMIJYASOIFTCCWAEjiBUwglgBI4gVMOL/AESGayoJuBUYAAAAAElFTkSuQmCC" style="display: block;">
+        <button class="img-remove-btn" id="img-remove-btn" onclick="removeImg()" style="display: block;">✕ Quitar imagen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENCABEZADO -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr" onclick="toggleSec(this)">🏛 Encabezado e institución <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body">
+      <div class="field"><label>Nombre institución (header)</label><textarea id="ef-uni">UNIVERSIDAD NACIONAL
+HERMILIO VALDIZÁN
+FAC. CIENCIAS AGRARIAS
+E.P. INGENIERÍA AGROINDUSTRIAL</textarea></div>
+      <div class="field"><label>Badge / etiqueta laboratorio</label><input id="ef-badge" value=""></div>
+      <div class="field"><label>URL logo izquierdo</label><input id="ef-logo-left" value="https://orange-hornet-425452.hostingersite.com/public/branding/logo-agroindustrial-left.png"></div>
+      <div class="field"><label>URL logo derecho</label><input id="ef-logo-right" value="https://orange-hornet-425452.hostingersite.com/public/branding/logo-unheval-right.png"></div>
+    </div>
+  </div>
+
+  <!-- FICHA -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr open" onclick="toggleSec(this)">📋 Ficha técnica <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body open">
+      <div class="field"><label>Nombre del equipo</label><input id="ef-name" value="Purificador de Agua RO/DI"></div>
+      <div class="field"><label>Marca / Modelo</label><input id="ef-brand" value="BIOBASE · Serie SCSJ (SCSJ-I / SCSJ-II)"></div>
+      <div class="field"><label>Categoría / Tag</label><input id="ef-tag" value="Tratamiento de agua"></div>
+      <div class="field"><label>Título sección datos técnicos</label><input id="ef-sec-specs" value="Datos técnicos"></div>
+      <div class="field"><label>Etiqueta dato 1</label><input id="ef-sk0" value="Marca"></div>
+      <div class="field"><label>Valor dato 1</label><input id="ef-sv0" value="BIOBASE"></div>
+      <div class="field"><label>Etiqueta dato 2</label><input id="ef-sk1" value="Modelo"></div>
+      <div class="field"><label>Valor dato 2</label><input id="ef-sv1" value="SCSJ-I / SCSJ-II"></div>
+      <div class="field"><label>Etiqueta dato 3</label><input id="ef-sk2" value="Serie"></div>
+      <div class="field"><label>Valor dato 3</label><input id="ef-sv2" value="SCSJ"></div>
+      <div class="field"><label>Etiqueta dato 4</label><input id="ef-sk3" value="Tecnología"></div>
+      <div class="field"><label>Valor dato 4</label><input id="ef-sv3" value="RO / DI"></div>
+      <div class="field"><label>Etiqueta dato 5 (ancho completo)</label><input id="ef-sk4" value="Aplicación"></div>
+      <div class="field"><label>Valor dato 5</label><input id="ef-sv4" value="Purificación de agua para laboratorio de análisis"></div>
+      <div class="field"><label>Nota al pie</label><textarea id="ef-note">Registrar la fecha de último cambio de membrana y cartuchos. El agua DI tiene alta agresividad química.</textarea></div>
+    </div>
+  </div>
+
+  <!-- VENTAJAS/LIMITACIONES -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr open" onclick="toggleSec(this)">✅ Ventajas y limitaciones <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body open">
+      <div class="field"><label>Título sección</label><input id="ef-sec-pc" value="Ventajas y limitaciones"></div>
+      <div class="field"><label>Título columna ventajas</label><input id="ef-pros-title" value="✓ Ventajas"></div>
+      <div class="bullet-manager">
+        <div class="bullet-manager-hdr" style="color:#2ecc71">✓ Viñetas de ventajas</div>
+        <div class="bullet-rows" id="pros-rows"><div class="bullet-row"><input value="Alta sensibilidad para mediciones exactas en laboratorio"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Calibración automática que garantiza resultados confiables"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Compatibilidad con diferentes tipos de recipientes y muestras"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Fácil limpieza de la superficie de pesaje"><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="add-row-btn" onclick="addRow(&#39;pros-rows&#39;)">+ Añadir ventaja</button>
+      </div>
+      <div class="field"><label>Título columna limitaciones</label><input id="ef-cons-title" value="✕ Limitaciones"></div>
+      <div class="bullet-manager">
+        <div class="bullet-manager-hdr" style="color:#e74c3c">✕ Viñetas de limitaciones</div>
+        <div class="bullet-rows" id="cons-rows"><div class="bullet-row"><input value="Capacidad limitada a 2000 g"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="No apta para muestras voluminosas"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Requiere superficie estable para evitar errores de lectura"><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="add-row-btn" onclick="addRow(&#39;cons-rows&#39;)">+ Añadir limitación</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FUNCIONES -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr open" onclick="toggleSec(this)">⚙️ Funciones y observaciones <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body open">
+      <div class="field"><label>Título sección funciones</label><input id="ef-sec-func" value="Lista de funciones"></div>
+      <div class="bullet-manager">
+        <div class="bullet-manager-hdr">⚙️ Viñetas de funciones</div>
+        <div class="bullet-rows" id="fn-rows"><div class="bullet-row"><input value="Pesaje exacto de reactivos sólidos y líquidos"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Determinación de masa en experimentos químicos y microbiológicos"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Control de calidad en procesos agroindustriales"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Preparación de soluciones con cantidades definidas"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="1. Equipos de protección personal (EPP)"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Bata de laboratorio."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="2. Restricciones de uso"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="No exceder la capacidad máxima de pesaje indicada en el equipo (200g)."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="No colocar muestras directamente sobre el plato sin recipiente."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="No ejercer presión sobre el plato ni utilizarlo como superficie de apoyo."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="add-row-btn" onclick="addRow(&#39;fn-rows&#39;)">+ Añadir función</button>
+      </div>
+      <div class="field"><label>Título sección observaciones</label><input id="ef-sec-obs" value="Observaciones al culminar"></div>
+
+      <div class="obs-manager">
+        <div class="obs-manager-hdr">📌 Sección 1 — Etiqueta y viñetas</div>
+        <div class="obs-label-field"><input id="ef-obl0" value="Filtros" placeholder="Título de la sección (ej: Pasos)"></div>
+        <div class="obs-rows" id="obs-rows-0"><div class="bullet-row"><input value="B.1 Verificación previa"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Verificar que la balanza este limpia y libre de residuos."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Comprobar que este sobre superficie firme, estable y nivelada."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Verificar que el plato de pesaje este correctamente instalado"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="B.2 Encendido y estabilización"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Encender la balanza mediante el interruptor o botón correspondiente."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Verificar que la pantalla indique cero y la lectura este estable"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="B.3 Procedimiento de operación"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Colocar el recipiente de pesaje limpio y seco sobre el plato"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Presionar la función de tara para ajustar la lectura a cero."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Incorporar la muestra de forma gradual evitando derrames"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="B.4 Finalización"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Retirar la muestra y el recipiente de pesaje"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Verificar la ausencia de residuos sobre el plato"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Apagar el equipo"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Mantener la balanza protegida de polvo, humedad y vibraciones"><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="obs-add-btn" onclick="addRow(&#39;obs-rows-0&#39;)">+ Añadir viñeta</button>
+      </div>
+
+      <div class="obs-manager">
+        <div class="obs-manager-hdr">📌 Sección 2 — Etiqueta y viñetas</div>
+        <div class="obs-label-field"><input id="ef-obl1" value="Mantenimiento e Higiene" placeholder="Título de la sección (ej: Mantenimiento)"></div>
+        <div class="obs-rows" id="obs-rows-1"><div class="bullet-row"><input value="Limpieza e higiene del equipo"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Responsable: Usuario autorizado."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Procedimiento:"><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Retirar los residuos sólidos de las superficies del equipo."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Limpiar las superficies externas con un panó suave y seco."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="En caso de derrames, realizar limpieza inmediata evitando ingreso de líquidos al interior."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Verificar que el equipo quede limpio para el siguiente usuario."><button class="del-row-btn" onclick="delRow(this)">✕</button></div><div class="bullet-row"><input value="Registro: Registrar la utilización en el formato de control de uso correspondiente."><button class="del-row-btn" onclick="delRow(this)">✕</button></div></div>
+        <button class="obs-add-btn" onclick="addRow(&#39;obs-rows-1&#39;)">+ Añadir viñeta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESPONSABLE -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr" onclick="toggleSec(this)">👤 Responsable <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body">
+      <div class="field"><label>Rol / cargo</label><input id="ef-rol" value="Encargada del equipo"></div>
+      <div class="field"><label>Nombre del encargado/a</label><input id="ef-enc" value="Maryorrit"></div>
+      <div class="field"><label>Área</label><input id="ef-area" value="UNHEVAL"></div>
+      <div class="field"><label>Institución (ficha responsable)</label><input id="ef-inst2" value="E.P. Ingeniería Agroindustrial — UNHEVAL"></div>
+      <div class="field"><label>Contacto / Correo</label><input id="ef-contact" value=""></div>
+    </div>
+  </div>
+
+  <!-- SEGURIDAD -->
+  <div class="ed-sec">
+    <div class="ed-sec-hdr open" onclick="toggleSec(this)">⚠️ Seguridad <span class="ed-arrow">▾</span></div>
+    <div class="ed-sec-body open">
+      <div class="field"><label>Título sección seguridad</label><input id="ef-sec-seg" value="Advertencias de seguridad"></div>
+      <div class="field"><label>Ícono advertencia 1</label><input id="ef-sico0" value="⚠️"></div>
+      <div class="field"><label>Texto advertencia 1</label><textarea id="ef-sft0">El agua DI puede lixiviar metales; usar solo recipientes plástico o vidrio borosilicato.</textarea></div>
+      <div class="field"><label>Ícono advertencia 2</label><input id="ef-sico1" value="🧪"></div>
+      <div class="field"><label>Texto advertencia 2</label><textarea id="ef-sft1">Verificar calidad del agua con conductivímetro antes de cada sesión de análisis.</textarea></div>
+      <div class="field"><label>Ícono advertencia 3</label><input id="ef-sico2" value="🔄"></div>
+      <div class="field"><label>Texto advertencia 3</label><textarea id="ef-sft2">Cambiar pre-filtros y membranas según cronograma del fabricante.</textarea></div>
+      <div class="field"><label>Ícono advertencia 4</label><input id="ef-sico3" value="🚫"></div>
+      <div class="field"><label>Texto advertencia 4</label><textarea id="ef-sft3">No conectar a fuente sin pre-tratamiento (sedimentación mínima).</textarea></div>
+    </div>
+  </div>
+
+  <button class="save-btn" onclick="saveData()">💾 Guardar cambios</button>
+  <button class="dl-btn" onclick="downloadHTML()">⬇ Descargar HTML actualizado</button>
+</div>
+</div>
+
+<!-- ══ PASSWORD MODAL ══ -->
+<div class="pwd-bg" id="pwdBg">
+<div class="pwd-box">
+  <div class="pwd-icon">🔒</div>
+  <div class="pwd-title">Acceso restringido</div>
+  <div class="pwd-sub">Ingresa la contraseña para editar esta ficha</div>
+  <input class="pwd-input" id="pwdInput" type="password" maxlength="20" placeholder="••••••" onkeydown="if(event.key===&#39;Enter&#39;)checkPwd()">
+  <div class="pwd-error" id="pwdError"></div>
+  <button class="pwd-btn" onclick="checkPwd()">🔓 Ingresar</button>
+  <button class="pwd-cancel" onclick="closePwd()">Cancelar</button>
+  <div class="pwd-attempts" id="pwdAttempts"></div>
+</div>
+</div>
+
+<!-- ══ QR MODAL ══ -->
+<div class="qr-panel-bg" id="qrBg">
+<div class="qr-panel">
+  <div class="qr-panel-t">Código QR del equipo</div>
+  <div class="qr-panel-sub">Escanea para abrir en cualquier celular</div>
+  <div class="qr-box"><canvas id="qrCanvas" width="180" height="180"></canvas></div>
+  <div class="url-row">
+    <input class="url-input" id="qrUrlInput" placeholder="Pega aquí la URL pública...">
+    <button class="url-copy-btn" id="urlCopyBtn" onclick="copyURL()">Copiar</button>
+  </div>
+  <div class="qr-hint">⚠️ El archivo debe estar en línea para que el QR funcione.<br>Súbelo a Hostinger o usa <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a> (gratis).</div>
+  <hr class="sep">
+  <div class="qr-actions">
+    <button class="qr-dl-btn" onclick="downloadQR()">⬇ Descargar QR</button>
+    <a class="netlify-btn" href="https://app.netlify.com/drop" target="_blank">☁ Netlify Drop</a>
+  </div>
+  <button class="qr-close-btn" onclick="closeQR()">Cerrar</button>
+</div>
+</div>
+
+<script>
+// ── TABS
+function sw(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById('p-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+// ── EDITOR SECTIONS
+function toggleSec(hdr){
+  hdr.classList.toggle('open');
+  hdr.nextElementSibling.classList.toggle('open');
+}
+// ── MODAL
+// ── PASSWORD PROTECTION
+const _PWD = (function(){const h=[76,97,98,50,48,50,52];return h.map(c=>String.fromCharCode(c)).join('')})();
+let _attempts=0;const _MAX=5;let _locked=false;let _lockUntil=0;
+let _pwdAction='editor'; // 'editor' or 'img'
+
+function _openPwd(action){
+  _pwdAction=action;
+  if(_locked&&Date.now()<_lockUntil){
+    const s=Math.ceil((_lockUntil-Date.now())/1000);
+    document.getElementById('pwdAttempts').textContent='Bloqueado. Intenta en '+s+'s';
+    document.getElementById('pwdBg').classList.add('open');return;
+  }
+  if(_locked)_locked=false;
+  document.getElementById('pwdInput').value='';
+  document.getElementById('pwdError').textContent='';
+  // update icon and subtitle based on action
+  const sub=document.querySelector('.pwd-sub');
+  if(action==='img'){
+    document.querySelector('.pwd-icon').textContent='🖼️';
+    if(sub)sub.textContent='Ingresa la contraseña para cambiar la imagen';
+  } else {
+    document.querySelector('.pwd-icon').textContent='🔒';
+    if(sub)sub.textContent='Ingresa la contraseña para editar esta ficha';
+  }
+  document.getElementById('pwdAttempts').textContent=_attempts>0?(_MAX-_attempts)+' intentos restantes':'';
+  document.getElementById('pwdBg').classList.add('open');
+  setTimeout(()=>document.getElementById('pwdInput').focus(),100);
+}
+function openEditor(){_openPwd('editor')}
+function reqPwdForImg(){_openPwd('img')}
+function closePwd(){document.getElementById('pwdBg').classList.remove('open')}
+function checkPwd(){
+  if(_locked&&Date.now()<_lockUntil){
+    const s=Math.ceil((_lockUntil-Date.now())/1000);
+    document.getElementById('pwdAttempts').textContent='Bloqueado. Intenta en '+s+'s';return;
+  }
+  const inp=document.getElementById('pwdInput');
+  const err=document.getElementById('pwdError');
+  const att=document.getElementById('pwdAttempts');
+  if(inp.value===_PWD){
+    _attempts=0;closePwd();
+    if(_pwdAction==='img'){
+      document.getElementById('imgInput').click();
+    } else {
+      document.getElementById('modalBg').classList.add('open');
+    }
+  } else {
+    _attempts++;
+    inp.value='';
+    inp.classList.add('error');setTimeout(()=>inp.classList.remove('error'),400);
+    if(_attempts>=_MAX){
+      _locked=true;_lockUntil=Date.now()+60000;
+      err.textContent='Demasiados intentos. Bloqueado 60 segundos.';
+      att.textContent='';
+      setTimeout(()=>{_locked=false;err.textContent='';att.textContent='';},60000);
+    } else {
+      err.textContent='Contraseña incorrecta.';
+      att.textContent=(_MAX-_attempts)+' intentos restantes';
+    }
+  }
+}
+function closeEditor(){document.getElementById('modalBg').classList.remove('open')}
+// ── COLORS
+function applyColors(c1,c2,c3){
+  document.documentElement.style.setProperty('--c1',c1);
+  document.documentElement.style.setProperty('--c2',c2);
+  document.documentElement.style.setProperty('--c3',c3);
+}
+document.getElementById('ef-c1').addEventListener('input',function(){applyColors(this.value,document.getElementById('ef-c2').value,document.getElementById('ef-c3').value)});
+document.getElementById('ef-c2').addEventListener('input',function(){applyColors(document.getElementById('ef-c1').value,this.value,document.getElementById('ef-c3').value)});
+document.getElementById('ef-c3').addEventListener('input',function(){applyColors(document.getElementById('ef-c1').value,document.getElementById('ef-c2').value,this.value)});
+// ── IMAGE
+function handleImgUpload(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(ev){setImg(ev.target.result);localStorage.setItem('lab_purificador_img',ev.target.result)};
+  reader.readAsDataURL(file);
+}
+function setImg(src){
+  const main=document.getElementById('eq-img-main');
+  const prev=document.getElementById('img-preview-modal');
+  const rmBtn=document.getElementById('img-remove-btn');
+  const emoji=document.getElementById('eq-emoji');
+  if(src){main.src=src;main.style.display='block';emoji.style.opacity='0';if(prev){prev.src=src;prev.style.display='block'}if(rmBtn)rmBtn.style.display='block'}
+  else{main.src='';main.style.display='none';emoji.style.opacity='1';if(prev){prev.src='';prev.style.display='none'}if(rmBtn)rmBtn.style.display='none'}
+}
+function removeImg(){setImg(null);localStorage.removeItem('lab_purificador_img')}
+// ── SAVE / APPLY
+function getData(){
+  return{
+    name:v('ef-name'),brand:v('ef-brand'),tag:v('ef-tag'),emoji:v('ef-emoji'),
+    c1:v('ef-c1'),c2:v('ef-c2'),c3:v('ef-c3'),
+    uni:v('ef-uni'),badge:v('ef-badge'),logoLeft:v('ef-logo-left'),logoRight:v('ef-logo-right'),
+    secSpecs:v('ef-sec-specs'),secPc:v('ef-sec-pc'),secFunc:v('ef-sec-func'),secObs:v('ef-sec-obs'),secSeg:v('ef-sec-seg'),
+    sk0:v('ef-sk0'),sv0:v('ef-sv0'),sk1:v('ef-sk1'),sv1:v('ef-sv1'),sk2:v('ef-sk2'),sv2:v('ef-sv2'),
+    sk3:v('ef-sk3'),sv3:v('ef-sv3'),sk4:v('ef-sk4'),sv4:v('ef-sv4'),
+    note:v('ef-note'),
+    prosTitle:v('ef-pros-title'),consTitle:v('ef-cons-title'),
+    pro0:v('ef-pro0'),pro1:v('ef-pro1'),pro2:v('ef-pro2'),
+    con0:v('ef-con0'),con1:v('ef-con1'),con2:v('ef-con2'),
+    fn0:v('ef-fn0'),fn1:v('ef-fn1'),fn2:v('ef-fn2'),fn3:v('ef-fn3'),
+    obl0:v('ef-obl0'),obt0:v('ef-obt0'),obl1:v('ef-obl1'),obt1:v('ef-obt1'),
+    rol:v('ef-rol'),enc:v('ef-enc'),area:v('ef-area'),inst2:v('ef-inst2'),contact:v('ef-contact'),
+    sico0:v('ef-sico0'),sft0:v('ef-sft0'),sico1:v('ef-sico1'),sft1:v('ef-sft1'),
+    sico2:v('ef-sico2'),sft2:v('ef-sft2'),sico3:v('ef-sico3'),sft3:v('ef-sft3'),
+  }
+}
+function v(id){const el=document.getElementById(id);return el?el.value:''}
+function t(id,val){const el=document.getElementById(id);if(el)el.textContent=val}
+function applyData(d){
+  applyColors(d.c1,d.c2,d.c3);
+  document.getElementById('ef-c1').value=d.c1;document.getElementById('ef-c2').value=d.c2;document.getElementById('ef-c3').value=d.c3;
+  t('eq-emoji',d.emoji);
+  t('hdr-uni',d.uni);t('hdr-badge',d.badge);
+  const ll=document.getElementById('logo-left');const lr=document.getElementById('logo-right');
+  if(d.logoLeft){ll.src=d.logoLeft;ll.style.display=''};if(d.logoRight){lr.src=d.logoRight;lr.style.display=''};
+  t('eq-tag-d',d.tag);t('eq-name-d',d.name);t('eq-brand-d',d.brand);t('eq-name-st',d.name);
+  document.title=d.name+' | '+d.uni.split('\n')[0];
+  t('sec-t-specs',d.secSpecs);t('sec-t-pc',d.secPc);t('sec-t-func',d.secFunc);t('sec-t-obs',d.secObs);t('sec-t-seg',d.secSeg);
+  t('sk0',d.sk0);t('sv0',d.sv0);t('sk1',d.sk1);t('sv1',d.sv1);t('sk2',d.sk2);t('sv2',d.sv2);
+  t('sk3',d.sk3);t('sv3',d.sv3);t('sk4',d.sk4);t('sv4',d.sv4);
+  t('eq-note',d.note);
+  t('pros-title',d.prosTitle);t('cons-title',d.consTitle);
+  t('pro-0',d.pro0);t('pro-1',d.pro1);t('pro-2',d.pro2);
+  t('con-0',d.con0);t('con-1',d.con1);t('con-2',d.con2);
+  t('fn-0',d.fn0);t('fn-1',d.fn1);t('fn-2',d.fn2);t('fn-3',d.fn3);
+  t('obl-0',d.obl0);t('obt-0',d.obt0);t('obl-1',d.obl1);t('obt-1',d.obt1);
+  t('eq-rol',d.rol);t('eq-enc',d.enc);t('eq-enc-av',d.enc.slice(0,2).toUpperCase());t('eq-area',d.area);t('eq-inst2',d.inst2);t('eq-contact',d.contact);
+  t('sico-0',d.sico0);t('sft-0',d.sft0);t('sico-1',d.sico1);t('sft-1',d.sft1);
+  t('sico-2',d.sico2);t('sft-2',d.sft2);t('sico-3',d.sico3);t('sft-3',d.sft3);
+  // sync inputs
+  ['ef-uni','ef-badge','ef-logo-left','ef-logo-right','ef-name','ef-brand','ef-tag','ef-emoji',
+   'ef-sec-specs','ef-sec-pc','ef-sec-func','ef-sec-obs','ef-sec-seg',
+   'ef-sk0','ef-sv0','ef-sk1','ef-sv1','ef-sk2','ef-sv2','ef-sk3','ef-sv3','ef-sk4','ef-sv4',
+   'ef-note','ef-pros-title','ef-cons-title',
+   'ef-pro0','ef-pro1','ef-pro2','ef-con0','ef-con1','ef-con2',
+   'ef-fn0','ef-fn1','ef-fn2','ef-fn3',
+   'ef-obl0','ef-obt0','ef-obl1','ef-obt1',
+   'ef-rol','ef-enc','ef-area','ef-inst2','ef-contact',
+   'ef-sico0','ef-sft0','ef-sico1','ef-sft1','ef-sico2','ef-sft2','ef-sico3','ef-sft3'
+  ].forEach(id=>{
+    const el=document.getElementById(id);const key=id.replace('ef-','').replace(/-([a-z])/g,(_,c)=>c.toUpperCase());
+    if(el&&d[key]!==undefined)el.value=d[key];
+  });
+}
+function saveData(){
+  const d=getData();
+  d.fnItems=getRowValues('fn-rows');
+  d.prosItems=getRowValues('pros-rows');
+  d.consItems=getRowValues('cons-rows');
+  d.obsItems0=getRowValues('obs-rows-0');
+  d.obsItems1=getRowValues('obs-rows-1');
+  applyData(d);
+  syncRowsToDisplay();
+  syncObsToDisplay();
+  localStorage.setItem('lab_purificador',JSON.stringify(d));
+  closeEditor();
+}
+function downloadHTML(){
+  const d=getData();applyData(d);
+  const blob=new Blob([document.documentElement.outerHTML],{type:'text/html'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='equipo-purificador.html';a.click();
+}
+// ── QR
+function openQR(){document.getElementById('qrBg').classList.add('open');renderQR()}
+function closeQR(){document.getElementById('qrBg').classList.remove('open')}
+function getQRUrl(){return document.getElementById('qrUrlInput').value.trim()||window.location.href}
+function renderQR(){
+  const url=getQRUrl();const canvas=document.getElementById('qrCanvas');const ctx=canvas.getContext('2d');
+  const img=new Image();img.crossOrigin='anonymous';
+  img.onload=function(){ctx.clearRect(0,0,180,180);ctx.drawImage(img,0,0,180,180)};
+  img.onerror=function(){ctx.fillStyle='#fff';ctx.fillRect(0,0,180,180);ctx.fillStyle='#333';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText('Pega la URL arriba',90,86);ctx.fillText('para generar el QR',90,102)};
+  img.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(url)+'&bgcolor=ffffff&color=071227&qzone=1&format=png';
+}
+function copyURL(){
+  const val=document.getElementById('qrUrlInput').value.trim();if(!val)return;
+  navigator.clipboard.writeText(val).then(()=>{
+    const btn=document.getElementById('urlCopyBtn');btn.textContent='✓ Copiado';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copiar';btn.classList.remove('copied')},2000);
+  });
+  localStorage.setItem('lab_purificador_url',val);
+}
+function downloadQR(){
+  const url=getQRUrl();const img=new Image();img.crossOrigin='anonymous';
+  img.onload=function(){
+    const c=document.createElement('canvas');c.width=220;c.height=220;
+    const cx=c.getContext('2d');cx.fillStyle='#ffffff';cx.fillRect(0,0,220,220);cx.drawImage(img,20,20,180,180);
+    const a=document.createElement('a');a.download='qr-<built-in function id>.png';a.href=c.toDataURL('image/png');a.click();
+  };
+  img.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(url)+'&bgcolor=ffffff&color=071227&qzone=1&format=png';
+}
+// ── LOAD SAVED
+window.addEventListener('load',()=>{
+  const saved=localStorage.getItem('lab_purificador');
+  if(saved){const d=JSON.parse(saved);applyData(d);loadRowsFromData(d);syncRowsToDisplay();loadObsFromData(d);syncObsToDisplay();}
+  const savedImg=localStorage.getItem('lab_purificador_img');if(savedImg)setImg(savedImg);
+  const savedUrl=localStorage.getItem('lab_purificador_url');if(savedUrl)document.getElementById('qrUrlInput').value=savedUrl;
+  document.getElementById('qrUrlInput').addEventListener('input',()=>{renderQR();document.getElementById('urlCopyBtn').classList.remove('copied');document.getElementById('urlCopyBtn').textContent='Copiar'});
+});
+
+// ── DYNAMIC BULLET LISTS ──────────────────────────────────────────────────
+function addRow(containerId){
+  const rows=document.getElementById(containerId);
+  const div=document.createElement('div');div.className='bullet-row';
+  div.innerHTML='<input placeholder="Escribe aquí..."><button class="del-row-btn" onclick="delRow(this)">✕</button>';
+  rows.appendChild(div);
+  div.querySelector('input').focus();
+}
+function delRow(btn){
+  const row=btn.closest('.bullet-row');
+  const rows=row.parentElement;
+  if(rows.querySelectorAll('.bullet-row').length>1)row.remove();
+  else{row.querySelector('input').value='';row.querySelector('input').focus();}
+}
+function getRowValues(containerId){
+  return Array.from(document.querySelectorAll('#'+containerId+' .bullet-row input'))
+    .map(i=>i.value.trim()).filter(v=>v!=='');
+}
+function renderBulletList(listId,items,dotClass){
+  const ul=document.getElementById(listId);if(!ul)return;
+  ul.innerHTML=items.map(item=>
+    '<li class="bullet-item"><div class="bullet-dot"></div><span>'+escHtml(item)+'</span></li>'
+  ).join('');
+}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function syncRowsToDisplay(){
+  renderBulletList('func-list-display', getRowValues('fn-rows'));
+  renderBulletList('pros-list-display', getRowValues('pros-rows'));
+  renderBulletList('cons-list-display', getRowValues('cons-rows'));
+}
+function loadRowsFromData(data){
+  function setRows(containerId, items){
+    const rows=document.getElementById(containerId);if(!rows)return;
+    rows.innerHTML='';
+    items.forEach(val=>{
+      const div=document.createElement('div');div.className='bullet-row';
+      div.innerHTML='<input value="'+escHtml(val)+'"><button class="del-row-btn" onclick="delRow(this)">✕</button>';
+      rows.appendChild(div);
+    });
+    if(rows.querySelectorAll('.bullet-row').length===0)addRow(containerId);
+  }
+  if(data.fnItems)setRows('fn-rows',data.fnItems);
+  if(data.prosItems)setRows('pros-rows',data.prosItems);
+  if(data.consItems)setRows('cons-rows',data.consItems);
+}
+
+
+// ── OBS BULLET LISTS ─────────────────────────────────────────────────────
+function syncObsToDisplay(){
+  [0,1].forEach(i=>{
+    const label=document.getElementById('ef-obl'+i);
+    const lbl=document.getElementById('obl-'+i);
+    if(label&&lbl)lbl.textContent=label.value;
+    const items=getRowValues('obs-rows-'+i);
+    const ul=document.getElementById('obs-list-'+i);
+    if(!ul)return;
+    ul.innerHTML=items.map(item=>
+      '<li class="obs-bullet-item"><div class="obs-bullet-dot"></div><span>'+escHtml(item)+'</span></li>'
+    ).join('');
+  });
+}
+function loadObsFromData(data){
+  [0,1].forEach(i=>{
+    const lbl=document.getElementById('ef-obl'+i);
+    if(lbl&&data['obl'+i])lbl.value=data['obl'+i];
+    const key='obsItems'+i;
+    if(data[key]){
+      const rows=document.getElementById('obs-rows-'+i);if(!rows)return;
+      rows.innerHTML='';
+      data[key].forEach(val=>{
+        const div=document.createElement('div');div.className='bullet-row';
+        div.innerHTML='<input value="'+escHtml(val)+'"><button class="del-row-btn" onclick="delRow(this)">✕</button>';
+        rows.appendChild(div);
+      });
+      if(!rows.querySelectorAll('.bullet-row').length)addRow('obs-rows-'+i);
+    }
+  });
+}
+
+</script>
+
+</body></html>
